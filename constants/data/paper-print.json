@@ -1,0 +1,81 @@
+{
+	"prints_on_paper": [
+		{
+			"name": "Forest Serenity",
+			"price": 49.99,
+			"description": "Bring the tranquility of the forest into your home with this serene print on paper. High-quality printing ensures crisp detail and vibrant colors. Printed on acid-free archival paper for longevity. Suitable for framing to match your decor.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": [
+				"/paper-prints/paper-one-v1.webp",
+				"/paper-prints/paper-one-v2.webp"
+			]
+		},
+		{
+			"name": "Ocean Sunrise",
+			"price": 59.99,
+			"description": "Capture the beauty of an ocean sunrise with this stunning print on paper. High-quality printing ensures vivid colors and fine details. Printed on acid-free archival paper for lasting quality. Perfect for adding a touch of serenity to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-two.webp"]
+		},
+		{
+			"name": "City Lights",
+			"price": 39.99,
+			"description": "Experience the energy of the city with this captivating print on paper. High-quality printing ensures sharp details and vibrant colors. Printed on acid-free archival paper for long-lasting beauty. Perfect for urban dwellers or anyone who loves city life.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-three.webp"]
+		},
+		{
+			"name": "Floral Elegance",
+			"price": 44.99,
+			"description": "Add a touch of floral beauty to your space with this elegant print on paper. High-quality printing ensures crisp detail and vibrant colors. Printed on acid-free archival paper for long-lasting quality. Perfect for bringing the beauty of nature indoors.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-four.webp"]
+		},
+		{
+			"name": "Mountain Majesty",
+			"price": 54.99,
+			"description": "Celebrate the grandeur of the mountains with this majestic print on paper. High-quality printing ensures sharp details and vivid colors. Printed on acid-free archival paper for lasting beauty. Perfect for nature lovers and outdoor enthusiasts.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-five.webp"]
+		},
+		{
+			"name": "Abstract Fusion",
+			"price": 49.99,
+			"description": "Add a modern touch to your decor with this vibrant abstract print on paper. High-quality printing ensures crisp detail and bold colors. Printed on acid-free archival paper for longevity. Perfect for adding personality to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": [
+				"/paper-prints/paper-six-v1.webp",
+				"/paper-prints/paper-six-v2.webp",
+				"/paper-prints/paper-six-v3.webp"
+			]
+		},
+		{
+			"name": "Vintage Charm",
+			"price": 39.99,
+			"description": "Bring a touch of nostalgia to your space with this charming vintage print on paper. High-quality printing ensures crisp detail and timeless beauty. Printed on acid-free archival paper for lasting quality. Perfect for adding character to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-seven.webp"]
+		},
+		{
+			"name": "Sunset Serenity",
+			"price": 59.99,
+			"description": "Capture the peace and tranquility of a sunset with this serene print on paper. High-quality printing ensures vivid colors and fine details. Printed on acid-free archival paper for lasting quality. Perfect for creating a calming atmosphere in any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-eight.webp"]
+		},
+		{
+			"name": "Abstract Horizon",
+			"price": 49.99,
+			"description": "Transform your space with this captivating abstract print on paper. High-quality printing ensures sharp details and vibrant colors. Printed on acid-free archival paper for lasting beauty. Perfect for adding a modern touch to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-nine.webp"]
+		},
+		{
+			"name": "Serenity Seascape",
+			"price": 54.99,
+			"description": "Escape to the serenity of the sea with this beautiful seascape print on paper. High-quality printing ensures sharp details and vibrant colors. Printed on acid-free archival paper for lasting quality. Perfect for bringing a sense of calm to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-ten.webp"]
+		}
+	]
+}

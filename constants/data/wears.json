@@ -1,0 +1,110 @@
+{
+	"printed_hoodies": [
+		{
+			"name": "Mountain Adventure Hoodie",
+			"price": 39.99,
+			"description": "Embark on a mountain adventure with this stylish printed hoodie. Made from soft and comfortable cotton blend fabric. Features a vibrant mountain print on the front. Perfect for outdoor enthusiasts and nature lovers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-eight-v1.webp",
+				"/wears/wear-eight-v2.webp",
+				"/wears/wear-eight-v3.webp"
+			]
+		},
+		{
+			"name": "Galaxy Dream Hoodie",
+			"price": 49.99,
+			"description": "Let your dreams take flight with this mesmerizing galaxy printed hoodie. Made from cozy and durable cotton blend fabric. Features a stunning galaxy print on the front and back. Perfect for stargazers and dreamers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-five-v1.webp",
+				"/wears/wear-five-v2.webp",
+				"/wears/wear-five-v3.webp"
+			]
+		},
+		{
+			"name": "Urban Graffiti Hoodie",
+			"price": 34.99,
+			"description": "Make a statement with this edgy urban graffiti printed hoodie. Crafted from premium cotton blend fabric for comfort and durability. Features bold graffiti artwork on the front and sleeves. Perfect for street style enthusiasts.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-four-v1.webp",
+				"/wears/wear-four-v2.webp",
+				"/wears/wear-four-v3.webp"
+			]
+		},
+		{
+			"name": "Vintage Vibe Hoodie",
+			"price": 44.99,
+			"description": "Channel retro vibes with this cool vintage printed hoodie. Made from soft and breathable cotton blend fabric. Features a nostalgic vintage print on the front and back. Perfect for adding a touch of old-school charm to your wardrobe.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-nine-v1.webp",
+				"/wears/wear-nine-v2.webp",
+				"/wears/wear-nine-v3.webp"
+			]
+		},
+		{
+			"name": "Nature's Beauty Hoodie",
+			"price": 54.99,
+			"description": "Celebrate the beauty of nature with this stunning printed hoodie. Made from soft and cozy cotton blend fabric. Features a vibrant nature-inspired print on the front and back. Perfect for nature lovers and outdoor enthusiasts.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-one-v1.webp",
+				"/wears/wear-one-v2.webp",
+				"/wears/wear-one-v3.webp"
+			]
+		},
+		{
+			"name": "Abstract Art Hoodie",
+			"price": 49.99,
+			"description": "Make a bold statement with this eye-catching abstract printed hoodie. Crafted from premium cotton blend fabric for comfort and style. Features a dynamic abstract print on the front and back. Perfect for art enthusiasts and trendsetters.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-seven-v1.webp",
+				"/wears/wear-seven-v2.webp",
+				"/wears/wear-seven-v3.webp"
+			]
+		},
+		{
+			"name": "Ocean Breeze Hoodie",
+			"price": 39.99,
+			"description": "Feel the ocean breeze with this refreshing printed hoodie. Made from soft and breathable cotton blend fabric. Features a calming ocean print on the front and back. Perfect for beach lovers and ocean enthusiasts.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-six-v1.webp",
+				"/wears/wear-six-v2.webp",
+				"/wears/wear-six-v3.webp"
+			]
+		},
+		{
+			"name": "Cityscape Vibes Hoodie",
+			"price": 44.99,
+			"description": "Immerse yourself in the energy of the city with this urban-inspired printed hoodie. Made from comfortable cotton blend fabric. Features a dynamic cityscape print on the front and back. Perfect for city dwellers and urban explorers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-ten-v1.webp",
+				"/wears/wear-ten-v2.webp",
+				"/wears/wear-ten-v3.webp"
+			]
+		},
+		{
+			"name": "Wilderness Wanderer Hoodie",
+			"price": 54.99,
+			"description": "Embark on a journey through the wilderness with this adventurous printed hoodie. Made from durable and comfortable cotton blend fabric. Features a captivating wilderness print on the front and back. Perfect for outdoor adventurers and nature lovers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-three-v1.webp",
+				"/wears/wear-three-v2.webp",
+				"/wears/wear-three-v3.webp"
+			]
+		},
+		{
+			"name": "Dreamy Galaxy Hoodie",
+			"price": 49.99,
+			"description": "Get lost in the stars with this dreamy galaxy printed hoodie. Made from soft and cozy cotton blend fabric. Features a mesmerizing galaxy print on the front and back. Perfect for stargazers and dreamers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": ["/wears/wear-four.webp", "/wears/wear-two.webp"]
+		}
+	]
+}
