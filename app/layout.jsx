@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { GeistMono } from "geist/font/mono";
-import Header from "@/components/global-components/header";
-import Footer from "@/components/global-components/footer";
+import Header from "../components/global-components/header";
+import Footer from "../components/global-components/footer";
+import SmoothScroll from "../providers/smooth-scroll";
 
 export const metadata = {
 	title: "Create Next App",
@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={` ${GeistMono.variable} antialiased`}>
 			<body>
-				<Header />
-				{children}
-				<Footer />
+				<SmoothScroll>
+					<Header />
+					{children}
+					<Footer />
+				</SmoothScroll>
 			</body>
 		</html>
 	);

@@ -2,36 +2,49 @@
 
 const fs = require("fs");
 
-export const fetchCanvasData = async () => {
+export const fetchProducts = async () => {
 	try {
-		const jsonData = fs.readFileSync(
-			"constants/data/framed-canvas.json",
-			"utf8"
-		);
+		const jsonData = fs.readFileSync("constants/data/products.json", "utf8");
 		const data = JSON.parse(jsonData);
-		return data.art_collection;
+
+		return data.products;
 	} catch (error) {
 		// Throw the error to indicate failure
 		throw new Error("Error reading data: " + error.message);
 	}
 };
-export const fetchPrintsData = async () => {
+export const fetchSingleProduct = async (slug) => {
 	try {
-		const jsonData = fs.readFileSync("constants/data/paper-print.json", "utf8");
+		// Decode the name parameter
+		const decodedName = decodeURIComponent(slug);
+
+		const jsonData = fs.readFileSync("constants/data/products.json", "utf8");
 		const data = JSON.parse(jsonData);
-		return data.prints_on_paper;
+
+		// Find the product with the matching name
+		const product = data.products?.find((item) => {
+			const itemName = decodeURIComponent(item.slug);
+			return itemName === decodedName;
+		});
+
+		if (!product) {
+			throw new Error(`Product with slug '${decodedName}' not found`);
+		}
+		return product;
 	} catch (error) {
 		// Throw the error to indicate failure
 		throw new Error("Error reading data: " + error.message);
 	}
 };
-export const fetchWearsData = async () => {
-	try {
-		const jsonData = fs.readFileSync("constants/data/wears.json", "utf8");
-		const data = JSON.parse(jsonData);
-		return data.printed_hoodies;
-	} catch (error) {
-		// Throw the error to indicate failure
-		throw new Error("Error reading data: " + error.message);
-	}
-};
+
+// export const fetchRelatedProducts = async (type) => {
+// 	try {
+// 		const jsonData = fs.readFileSync("constants/data/products.json", "utf8");
+// 		const data = JSON.parse(jsonData);
+
+// 		return data.products;
+// 	} catch (error) {
+// 		// Throw the error to indicate failure
+// 		throw new Error("Error reading data: " + error.message);
+// 	}
+// };

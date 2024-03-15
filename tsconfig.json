@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/collection/page.jsx", "app/collection/wears/page.jsx", "app/story/page.jsx", "app/collection/framed-canvas/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

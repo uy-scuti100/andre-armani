@@ -4,7 +4,7 @@ import React from "react";
 export default function Productcard({ name, images, price, i }) {
 	return (
 		<figure key={i} className="flex flex-col gap-6">
-			<div className="relative group w-[180px] md:w-[300px] h-[200px] md:h-[300px] lg:[450px]">
+			<div className="relative group w-[180px] md:w-[250px] h-[200px] lg:w-[300px] md:h-[300px] lg:[450px]">
 				<Image
 					src={images[0]}
 					alt={`${name}-${i}`}
@@ -31,7 +31,7 @@ export default function Productcard({ name, images, price, i }) {
 			<div className="flex flex-col gap-2">
 				<div className="font-medium truncate text-ellipsis overflow-hidden ...">
 					{name.length > 15 ? (
-						<div>"{name.substring(0, 15)}.."</div>
+						<div>&quot;{name.substring(0, 15)}..&quot;</div>
 					) : (
 						<div>"{name}"</div>
 					)}

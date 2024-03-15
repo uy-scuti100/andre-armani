@@ -1,0 +1,396 @@
+{
+	"products": [
+		{
+			"name": "Sunset Serenity",
+			"slug": "sunset-serenity",
+			"type": "art_collection",
+			"price": 299.99,
+			"description": "Capture the beauty of a tranquil sunset with this stunning canvas. Printed on 100% polyester base with acid-free print media, featuring a medium texture and scratch-resistant finish. The solid wood frame is fully finished with corner bumpers for level hanging and wall protection. Easily wipes clean with a damp cloth.",
+			"sizes": ["24x36", "30x45", "36x54"],
+			"images": [
+				"/framed-canvas/canvas-eight-v1.webp",
+				"/framed-canvas/canvas-eight-v2.webp",
+				"/framed-canvas/canvas-eight-v3.webp"
+			]
+		},
+		{
+			"name": "Mystic Forest",
+			"slug": "mystic-forest",
+			"type": "art_collection",
+			"price": 249.99,
+			"description": "Step into a world of enchantment with this captivating forest scene. Crafted on high-quality polyester canvas with acid-free print media, offering a smooth texture and durable finish. The solid wood frame ensures stability and includes corner bumpers for secure hanging. Effortlessly maintain its beauty with a quick wipe-down using a damp cloth.",
+			"sizes": ["20x300", "24x36", "30x45"],
+			"images": [
+				"/framed-canvas/canvas-eleven-v1.webp",
+				"/framed-canvas/canvas-eleeven-v2.webp",
+				"/framed-canvas/canvas-eleven-v3.webp"
+			]
+		},
+		{
+			"name": "Ocean Dreams",
+			"slug": "ocean-dreams",
+			"type": "art_collection",
+			"price": 349.99,
+			"description": "Immerse yourself in the calming serenity of ocean waves with this breathtaking canvas. Printed on premium polyester canvas with fade-resistant inks, ensuring vibrant colors that last. The solid wood frame provides durability and elegance, complete with corner bumpers for easy hanging. Keep it looking pristine with a simple wipe-down using a damp cloth.",
+			"sizes": ["24x13", "30x40", "36x48"],
+			"images": [
+				"/framed-canvas/canvas-five-v1.webp",
+				"/framed-canvas/canvas-five-v2.webp",
+				"/framed-canvas/canvas-five-v3.webp"
+			]
+		},
+		{
+			"name": "Cityscape Reflections",
+			"slug": "cityscape-reflections",
+			"type": "art_collection",
+			"price": 199.99,
+			"description": "Experience the energy of urban life with this captivating cityscape canvas. Printed on polyester canvas with a matte finish, offering exceptional clarity and depth. The solid wood frame is expertly crafted for stability and includes corner bumpers for hassle-free hanging. Keep it looking pristine with regular dusting using a soft cloth.",
+			"sizes": ["18x24", "24x36", "30x45"],
+			"images": [
+				"/framed-canvas/canvas-seven-v2.webp",
+				"/framed-canvas/canvas-seven-v1.webp",
+				"/framed-canvas/canvas-seven-v3.webp"
+			]
+		},
+		{
+			"name": "Abstract Fusion",
+			"slug": "abstract-fusion",
+			"type": "art_collection",
+			"price": 279.99,
+			"description": "Elevate your space with the dynamic energy of abstract art. This canvas features bold colors and intricate patterns printed on premium polyester canvas. The solid wood frame adds sophistication and durability, complete with corner bumpers for easy hanging. Maintain its brilliance with occasional dusting using a soft brush or cloth.",
+			"sizes": ["24x36", "30x30", "36x36"],
+			"images": [
+				"/framed-canvas/canvas-ten-v1.webp",
+				"/framed-canvas/canvas-ten-v2.webp",
+				"/framed-canvas/canvas-ten-v3.webp"
+			]
+		},
+		{
+			"name": "Mountain Majesty",
+			"slug": "mountain-majesty",
+			"type": "art_collection",
+			"price": 319.99,
+			"description": "Celebrate the grandeur of nature with this majestic mountain scene. Printed on high-quality polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame is expertly crafted for stability and includes corner bumpers for secure hanging. Keep it pristine with regular dusting using a soft, dry cloth.",
+			"sizes": ["24x36", "30x45", "40x60"],
+			"images": [
+				"/framed-canvas/canvas-thirteen-v2.webp",
+				"/framed-canvas/canvas-thirteen-v1.webp",
+				"/framed-canvas/canvas-thirteen-v3.webp"
+			]
+		},
+		{
+			"name": "Floral Harmony",
+			"slug": "floral-harmony",
+			"type": "art_collection",
+			"price": 199.99,
+			"description": "Bring the beauty of nature indoors with this elegant floral canvas. Printed on premium polyester canvas with fade-resistant inks, ensuring vibrant colors that last. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
+			"sizes": ["16x20", "24x30", "30x40"],
+			"images": [
+				"/framed-canvas/canvas-twelve-v1.webp",
+				"/framed-canvas/canvas-twelve-v2.webp",
+				"/framed-canvas/canvas-twelve-v3.webp"
+			]
+		},
+		{
+			"name": "Abstract Horizon",
+			"slug": "abstract-horizon",
+			"type": "art_collection",
+			"price": 349.99,
+			"description": "Transform your space with the captivating allure of abstract art. This canvas features a harmonious blend of colors and shapes printed on premium polyester canvas. The solid wood frame adds sophistication and durability, complete with corner bumpers for easy hanging. Keep it looking pristine with regular dusting using a soft brush or cloth.",
+			"sizes": ["24x36", "30x45", "36x54"],
+			"images": [
+				"/framed-canvas/canvas-two-v1.webp",
+				"/framed-canvas/canvas-two-v2.webp",
+				"/framed-canvas/canvas-two-v3.webp"
+			]
+		},
+		{
+			"name": "Vintage Charm",
+			"slug": "vintage-charm",
+			"type": "art_collection",
+			"price": 179.99,
+			"description": "Add a touch of nostalgia to your space with this charming vintage canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
+			"sizes": ["18x24", "24x36", "30x40"],
+			"images": [
+				"/framed-canvas/canvas-fourteen-v1.webp",
+				"/framed-canvas/canvas-fourteen-v2.webp",
+				"/framed-canvas/canvas-fourteen-v3.webp"
+			]
+		},
+		{
+			"name": "Aurora Borealis",
+			"slug": "aurora-borealis",
+			"type": "art_collection",
+			"price": 299.99,
+			"description": "Experience the breathtaking beauty of the northern lights with this stunning canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
+			"sizes": ["24x36", "30x45", "36x254"],
+			"images": [
+				"/framed-canvas/canvas-fifteen-v1.webp",
+				"/framed-canvas/canvas-fifteen-v2.webp",
+				"/framed-canvas/canvas-fifteen-v3.webp"
+			]
+		},
+		{
+			"name": "Serenity Seascape",
+			"slug": "serenity-seascape",
+			"type": "art_collection",
+			"price": 259.99,
+			"description": "Escape to the tranquility of the sea with this serene seascape canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
+			"sizes": ["20x30", "24x36", "30x45"],
+			"images": [
+				"/framed-canvas/canvas-sixteen-v1.webp",
+				"/framed-canvas/canvas-sixteen-v2.webp",
+				"/framed-canvas/canvas-sixteen-v3.webp"
+			]
+		},
+		{
+			"name": "Dreamy Waterfall",
+			"slug": "dreamy-waterfall",
+			"type": "art_collection",
+			"price": 379.99,
+			"description": "Embark on a journey to natural wonder with this captivating waterfall canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
+			"sizes": ["24x36", "30x45", "36x54"],
+			"images": [
+				"/framed-canvas/canvas-seventeen-v1.webp",
+				"/framed-canvas/canvas-seventeen-v2.webp",
+				"/framed-canvas/canvas-seventeen-v2.webp"
+			]
+		},
+		{
+			"name": "Rustic Landscape",
+			"slug": "rustic-landscape",
+			"type": "art_collection",
+			"price": 209.99,
+			"description": "Experience the beauty of the countryside with this rustic landscape canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
+			"sizes": ["16x20", "24x136", "30x40"],
+			"images": [
+				"/framed-canvas/canvas-eighteen-v1.webp",
+				"/framed-canvas/canvas-eighteen-v2.webp",
+				"/framed-canvas/canvas-eighteen-v3.webp"
+			]
+		},
+		{
+			"name": "Forest Serenity",
+			"slug": "forest-serenity",
+			"type": "prints_on_paper",
+			"price": 49.99,
+			"description": "Bring the tranquility of the forest into your home with this serene print on paper. High-quality printing ensures crisp detail and vibrant colors. Printed on acid-free archival paper for longevity. Suitable for framing to match your decor.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": [
+				"/paper-prints/paper-one-v1.webp",
+				"/paper-prints/paper-one-v2.webp"
+			]
+		},
+		{
+			"name": "Ocean Sunrise",
+			"slug": "ocean-sunrise",
+			"type": "prints_on_paper",
+			"price": 59.99,
+			"description": "Capture the beauty of an ocean sunrise with this stunning print on paper. High-quality printing ensures vivid colors and fine details. Printed on acid-free archival paper for lasting quality. Perfect for adding a touch of serenity to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-two.webp"]
+		},
+		{
+			"name": "City Lights",
+			"slug": "city-lights",
+			"type": "prints_on_paper",
+			"price": 39.99,
+			"description": "Experience the energy of the city with this captivating print on paper. High-quality printing ensures sharp details and vibrant colors. Printed on acid-free archival paper for long-lasting beauty. Perfect for urban dwellers or anyone who loves city life.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-three.webp"]
+		},
+		{
+			"name": "Floral Elegance",
+			"slug": "floral-elegance",
+			"type": "prints_on_paper",
+			"price": 44.99,
+			"description": "Add a touch of floral beauty to your space with this elegant print on paper. High-quality printing ensures crisp detail and vibrant colors. Printed on acid-free archival paper for long-lasting quality. Perfect for bringing the beauty of nature indoors.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-four.webp"]
+		},
+		{
+			"name": "Mountain Insomnia",
+			"slug": "mountain-insomnia",
+			"type": "prints_on_paper",
+			"price": 54.99,
+			"description": "Celebrate the grandeur of the mountains with this majestic print on paper. High-quality printing ensures sharp details and vivid colors. Printed on acid-free archival paper for lasting beauty. Perfect for nature lovers and outdoor enthusiasts.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-five.webp"]
+		},
+		{
+			"name": "Abstract Fusion",
+			"slug": "abstract-fusion",
+			"type": "prints_on_paper",
+			"price": 49.99,
+			"description": "Add a modern touch to your decor with this vibrant abstract print on paper. High-quality printing ensures crisp detail and bold colors. Printed on acid-free archival paper for longevity. Perfect for adding personality to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": [
+				"/paper-prints/paper-six-v1.webp",
+				"/paper-prints/paper-six-v2.webp",
+				"/paper-prints/paper-six-v3.webp"
+			]
+		},
+		{
+			"name": "Vintage Charm",
+			"slug": "vintage-charm",
+			"type": "prints_on_paper",
+			"price": 39.99,
+			"description": "Bring a touch of nostalgia to your space with this charming vintage print on paper. High-quality printing ensures crisp detail and timeless beauty. Printed on acid-free archival paper for lasting quality. Perfect for adding character to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-seven.webp"]
+		},
+		{
+			"name": "Sunset Serenity",
+			"type": "prints_on_paper",
+
+			"price": 59.99,
+			"description": "Capture the peace and tranquility of a sunset with this serene print on paper. High-quality printing ensures vivid colors and fine details. Printed on acid-free archival paper for lasting quality. Perfect for creating a calming atmosphere in any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-eight.webp"]
+		},
+		{
+			"name": "Abstract Horizon",
+			"slug": "abstract-horizon",
+			"type": "prints_on_paper",
+			"price": 49.99,
+			"description": "Transform your space with this captivating abstract print on paper. High-quality printing ensures sharp details and vibrant colors. Printed on acid-free archival paper for lasting beauty. Perfect for adding a modern touch to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-nine.webp"]
+		},
+		{
+			"name": "Serenity Seascape",
+			"slug": "serenty-seascape",
+			"type": "prints_on_paper",
+			"price": 54.99,
+			"description": "Escape to the serenity of the sea with this beautiful seascape print on paper. High-quality printing ensures sharp details and vibrant colors. Printed on acid-free archival paper for lasting quality. Perfect for bringing a sense of calm to any room.",
+			"sizes": ["8x10", "11x14", "16x20"],
+			"images": ["/paper-prints/paper-ten.webp"]
+		},
+		{
+			"name": "Mountain Adventure Hoodie",
+			"slug": "mountain-adventure-hoodie",
+			"type": "printed_hoodies",
+			"price": 39.99,
+			"description": "Embark on a mountain adventure with this stylish printed hoodie. Made from soft and comfortable cotton blend fabric. Features a vibrant mountain print on the front. Perfect for outdoor enthusiasts and nature lovers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-eight-v1.webp",
+				"/wears/wear-eight-v2.webp",
+				"/wears/wear-eight-v3.webp"
+			]
+		},
+		{
+			"name": "Galaxy Dream Hoodie",
+			"slug": "galaxy-dream-hoodie",
+			"type": "printed_hoodies",
+			"price": 49.99,
+			"description": "Let your dreams take flight with this mesmerizing galaxy printed hoodie. Made from cozy and durable cotton blend fabric. Features a stunning galaxy print on the front and back. Perfect for stargazers and dreamers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-five-v1.webp",
+				"/wears/wear-five-v2.webp",
+				"/wears/wear-five-v3.webp"
+			]
+		},
+		{
+			"name": "Urban Graffiti Hoodie",
+			"slug": "urban-graffiti-hoodie",
+			"type": "printed_hoodies",
+			"price": 34.99,
+			"description": "Make a statement with this edgy urban graffiti printed hoodie. Crafted from premium cotton blend fabric for comfort and durability. Features bold graffiti artwork on the front and sleeves. Perfect for street style enthusiasts.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-four-v1.webp",
+				"/wears/wear-four-v2.webp",
+				"/wears/wear-four-v3.webp"
+			]
+		},
+		{
+			"name": "Vintage Vibe Hoodie",
+			"slug": "vintage-vibe-hoodie",
+			"type": "printed_hoodies",
+			"price": 44.99,
+			"description": "Channel retro vibes with this cool vintage printed hoodie. Made from soft and breathable cotton blend fabric. Features a nostalgic vintage print on the front and back. Perfect for adding a touch of old-school charm to your wardrobe.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-nine-v1.webp",
+				"/wears/wear-nine-v2.webp",
+				"/wears/wear-nine-v3.webp"
+			]
+		},
+		{
+			"name": "Nature's Beauty Hoodie",
+			"slug": "natures-beauty-hoodie",
+			"type": "printed_hoodies",
+			"price": 54.99,
+			"description": "Celebrate the beauty of nature with this stunning printed hoodie. Made from soft and cozy cotton blend fabric. Features a vibrant nature-inspired print on the front and back. Perfect for nature lovers and outdoor enthusiasts.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-one-v1.webp",
+				"/wears/wear-one-v2.webp",
+				"/wears/wear-one-v3.webp"
+			]
+		},
+		{
+			"name": "Abstract Art Hoodie",
+			"slug": "abstract-art-hoodie",
+			"type": "printed_hoodies",
+			"price": 49.99,
+			"description": "Make a bold statement with this eye-catching abstract printed hoodie. Crafted from premium cotton blend fabric for comfort and style. Features a dynamic abstract print on the front and back. Perfect for art enthusiasts and trendsetters.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-seven-v1.webp",
+				"/wears/wear-seven-v2.webp",
+				"/wears/wear-seven-v3.webp"
+			]
+		},
+		{
+			"name": "Ocean Breeze Hoodie",
+			"slug": "ocean-breeze-hoodie",
+			"type": "printed_hoodies",
+			"price": 39.99,
+			"description": "Feel the ocean breeze with this refreshing printed hoodie. Made from soft and breathable cotton blend fabric. Features a calming ocean print on the front and back. Perfect for beach lovers and ocean enthusiasts.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-six-v1.webp",
+				"/wears/wear-six-v2.webp",
+				"/wears/wear-six-v3.webp"
+			]
+		},
+		{
+			"name": "Cityscape Vibes Hoodie",
+			"slug": "cityscape-vibes-hoodie",
+			"type": "printed_hoodies",
+			"price": 44.99,
+			"description": "Immerse yourself in the energy of the city with this urban-inspired printed hoodie. Made from comfortable cotton blend fabric. Features a dynamic cityscape print on the front and back. Perfect for city dwellers and urban explorers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-ten-v1.webp",
+				"/wears/wear-ten-v2.webp",
+				"/wears/wear-ten-v3.webp"
+			]
+		},
+		{
+			"name": "Wilderness Wanderer Hoodie",
+			"slug": "wilderness-wanderer-hoodie",
+			"type": "printed_hoodies",
+			"price": 54.99,
+			"description": "Embark on a journey through the wilderness with this adventurous printed hoodie. Made from durable and comfortable cotton blend fabric. Features a captivating wilderness print on the front and back. Perfect for outdoor adventurers and nature lovers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": [
+				"/wears/wear-three.webp",
+				"/wears/wear-three-v2.webp",
+				"/wears/wear-three-v3.webp"
+			]
+		},
+		{
+			"name": "Dreamy Galaxy Hoodie",
+			"slug": "dreamy-galaxy-hoodie",
+			"type": "printed_hoodies",
+			"price": 49.99,
+			"description": "Get lost in the stars with this dreamy galaxy printed hoodie. Made from soft and cozy cotton blend fabric. Features a mesmerizing galaxy print on the front and back. Perfect for stargazers and dreamers.",
+			"sizes": ["S", "M", "L", "XL"],
+			"images": ["/wears/wear-four.webp", "/wears/wear-two.webp"]
+		}
+	]
+}

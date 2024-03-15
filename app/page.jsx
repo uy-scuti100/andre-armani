@@ -1,13 +1,9 @@
-import { fetchImages } from "@/actions/fetchings";
-import Herosection from "@/components/(homepage-components)/hero-section";
-import Showcase from "@/components/(homepage-components)/showcase";
-import Featureproduct from "@/components/(homepage-components)/feature-product";
-
-export default async function Home() {
-	// const imagesWithBase64 = await fetchImages();
-	// const data = await fetchImages();
+import Herosection from "../components/(homepage-components)/hero-section";
+import Showcase from "../components/(homepage-components)/showcase";
+import Featureproduct from "../components/(homepage-components)/feature-product";
+export default function Home() {
 	return (
-		<main>
+		<main className="pt-[6.438rem]">
 			<Herosection />
 			<Showcase />
 			<Featureproduct />

@@ -9,9 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, FreeMode, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-import { heroImages } from "@/constants/hero-images";
+import { heroImages } from "../../constants/hero-images";
 export default function Herosection() {
-	// { images }
 	return (
 		<Swiper
 			slidesPerView={1}
@@ -21,7 +20,7 @@ export default function Herosection() {
 			navigation={true}
 			loop
 			modules={[Pagination, Navigation, FreeMode, Autoplay]}
-			className="h-[70vh] md:h-screen w-[98%] imageSlider mainSlider"
+			className="h-[85vh] md:h-screen w-[98%] imageSlider mainSlider -z-10"
 		>
 			{heroImages?.map((image, i) => {
 				return (
@@ -31,12 +30,11 @@ export default function Herosection() {
 							alt={`art-${i}`}
 							height={500}
 							width={500}
-							className="object-cover w-full h-full"
+							className="object-cover w-full h-[95%]"
 							sizes="(max-width: 480px) 100vw,
 							(max-width: 768px) 75vw,
 							(max-width: 1060px) 50vw,
 							33vw"
-							// style={{ objectFit: "cover" }}
 							priority
 						/>
 					</SwiperSlide>

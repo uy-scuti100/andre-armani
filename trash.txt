@@ -39,3 +39,111 @@
 // 		console.error("There was a problem with the fetch operation:", error);
 // 	}
 // }
+
+export const fetchPrintedHoodies = async (slug) => {
+	try {
+		// Decode the name parameter
+		const decodedName = decodeURIComponent(slug);
+
+		const jsonData = fs.readFileSync("constants/data/wears.json", "utf8");
+		const data = JSON.parse(jsonData);
+
+		// Find the product with the matching name
+		const product = data.printed_hoodies?.find((item) => {
+			const itemName = decodeURIComponent(item.slug);
+			return itemName === decodedName;
+		});
+
+		if (!product) {
+			throw new Error(`Product with name '${decodedName}' not found`);
+		}
+		return product;
+	} catch (error) {
+		// Throw the error to indicate failure
+		throw new Error("Error reading data: " + error.message);
+	}
+};
+export const fetchSingleCanvas = async (slug) => {
+	try {
+		// Decode the name parameter
+		const decodedName = decodeURIComponent(slug);
+
+		const jsonData = fs.readFileSync(
+			"constants/data/framed-canvas.json",
+			"utf8"
+		);
+		const data = JSON.parse(jsonData);
+
+		// Find the product with the matching name
+		const product = data.art_collection?.find((item) => {
+			const itemName = decodeURIComponent(item.slug);
+			return itemName === decodedName;
+		});
+
+		if (!product) {
+			throw new Error(`Product with name '${decodedName}' not found`);
+		}
+		return product;
+	} catch (error) {
+		// Throw the error to indicate failure
+		throw new Error("Error reading data: " + error.message);
+	}
+};
+
+
+
+// export const fetchPrintsData = async () => {
+// 	try {
+// 		const jsonData = fs.readFileSync("constants/data/paper-print.json", "utf8");
+// 		const data = JSON.parse(jsonData);
+// 		return data.prints_on_paper;
+// 	} catch (error) {
+// 		// Throw the error to indicate failure
+// 		throw new Error("Error reading data: " + error.message);
+// 	}
+// };
+// export const fetchWearsData = async () => {
+// 	try {
+// 		const jsonData = fs.readFileSync("constants/data/wears.json", "utf8");
+// 		const data = JSON.parse(jsonData);
+// 		return data.printed_hoodies;
+// 	} catch (error) {
+// 		// Throw the error to indicate failure
+// 		throw new Error("Error reading data: " + error.message);
+// 	}
+// };
+
+
+
+{
+	/* <div className="flex items-center h-[70vh] gap-8 overflow-x-auto md:hidden">
+    {images &&
+        images?.map((image, i) => (
+            <Image
+                src={image}
+                alt={`${name}'s image-${i}`}
+                height={500}
+                width={300}
+                className="object-cover h-full w-[300px]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+        ))}
+</div> */
+}
+{
+	/* <div className="flex items-center justify-center gap-5">
+					{images.map((image, i) => {
+						return (
+							<button onClick={() => setSlider(i)}>
+								<Image
+									src={image}
+									height={100}
+									width={100}
+									className="w-[80px] h-[80px] object-cover cursor-pointer"
+									alt={`${name}'s image`}
+								/>
+							</button>
+						);
+					})}
+				</div> */
+}

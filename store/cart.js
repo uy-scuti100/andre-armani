@@ -3,7 +3,6 @@ import { create } from "zustand";
 // Initial state
 const initialState = {
 	cart: [],
-	products: [],
 	favorites: [],
 };
 
@@ -12,10 +11,29 @@ const useStore = create((set) => ({
 	...initialState,
 
 	// Actions
-	addToCart: (productId) =>
-		set((state) => ({
-			cart: [...state.cart, productId],
-		})),
+	addToCart: (productId, selectedSize = undefined) =>
+		set((state) => {
+			const existingItem = state.cart.find(
+				(item) => item.productId === productId && item.size === selectedSize
+			);
+
+			if (existingItem) {
+				// If the same product with the same size already exists, increase its quantity
+				return {
+					cart: state.cart.map((item) =>
+						item.productId === productId && item.size === selectedSize
+							? { ...item, quantity: item.quantity + 1 }
+							: item
+					),
+				};
+			} else {
+				// Otherwise, add a new cart item with the selected size (or default size)
+				const size = selectedSize || state.defaultSize(productId); // Use selected size or default
+				return {
+					cart: [...state.cart, { productId, size, quantity: 1 }],
+				};
+			}
+		}),
 
 	removeFromCart: (productId) =>
 		set((state) => ({
