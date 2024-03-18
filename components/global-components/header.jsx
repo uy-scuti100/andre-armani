@@ -45,7 +45,15 @@ export default function Header() {
 				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 				pointerEvents: "all",
 			})
-
+			.to(".animated-box", {
+				duration: 1,
+				delay: 0,
+				stagger: {
+					amount: 0.4,
+				},
+				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+				ease: "power4.inOut",
+			})
 			.from(
 				".menu__item",
 				{
@@ -60,16 +68,7 @@ export default function Header() {
 				},
 				"-=1"
 			)
-			.to(".animated-box", {
-				duration: 1,
-				delay: 0,
-				opacity: 1,
-				stagger: {
-					amount: 0.4,
-				},
-				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-				ease: "power4.inOut",
-			})
+
 			.from(
 				".socials",
 				{
@@ -95,19 +94,6 @@ export default function Header() {
 			);
 	}, []);
 
-	useEffect(() => {
-		const tl = gsap.timeline();
-		tl.to(headerRef.current, {
-			y: 0,
-			duration: 1,
-			opacity: 1,
-			ease: "bounce.out",
-		});
-		return () => {
-			tl.kill(); // Clear the timeline and its animations
-		};
-	}, [pathname]);
-
 	const toggleNavOpen = () => {
 		setOpenNav((prev) => !prev);
 		if (openNav) {
@@ -125,7 +111,7 @@ export default function Header() {
 	return (
 		<header
 			ref={pathname === "/" ? null : headerRef}
-			className=" -translate-y-10 opacity-0 max-w-[1200px] fixed z-40 flex flex-col items-center justify-center w-full mx-auto bg-background overflow-hidden"
+			className="max-w-[1200px] fixed z-40 flex flex-col items-center justify-center w-full mx-auto bg-background overflow-hidden"
 		>
 			<nav className="flex items-center justify-between py-5 w-full px-[0.63rem] z-50">
 				<menu className="md:flex items-center justify-center space-x-6 text-[13px] uppercase hidden z-[999999]">
@@ -193,7 +179,7 @@ export default function Header() {
 			{/* mobile-nav */}
 			<div
 				ref={navRef}
-				className={`bg-background sm:hidden fixed overflow-hidden inset-0 pointer-events-none z-50 `}
+				className={`bg-background sm:hidden fixed overflow-hidden inset-0 pointer-events-none z-50`}
 				style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
 			>
 				<div className="absolute right-0 px-5 top-5 ">
@@ -207,7 +193,7 @@ export default function Header() {
 				</div>
 
 				<div
-					className="tracking-[6px] flex flex-col absolute top-10 sm:top-5 justify-center items-center w-full animated-box opacity-0 "
+					className="absolute flex flex-col items-center justify-center w-full top-10 sm:top-5 animated-box"
 					style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
 				>
 					<div>

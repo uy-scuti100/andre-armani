@@ -125,7 +125,7 @@ export default function ProductInfo({ slug, children }) {
 								{data.type === "printed_hoodies" ? (
 									<Button
 										href={"#"}
-										className={`rounded-none hover:text-white text-black font-light text-xs ${
+										className={`rounded-none hover:text-background  text-black font-light text-xs ${
 											selectedSize === size
 												? "bg-black text-white"
 												: "bg-[#C7C7C7]"
@@ -136,7 +136,7 @@ export default function ProductInfo({ slug, children }) {
 								) : (
 									<Button
 										href={"#"}
-										className={`rounded-none hover:text-white text-black font-light text-xs ${
+										className={`rounded-none hover:text-background text-black font-light text-xs ${
 											selectedSize === size
 												? "bg-black text-white"
 												: "bg-[#C7C7C7]"

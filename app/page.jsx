@@ -10,15 +10,15 @@ export default function page() {
 	useGSAP(() => {
 		gsap.to(".overlay", {
 			duration: 1.5,
-			delay: 6.5,
+			delay: 5,
 			clipPath: "circle(50% at 50% 50%)",
 		});
-	});
+	}, []);
 
 	useEffect(() => {
 		setTimeout(() => {
 			router.push("/home");
-		}, 6500);
+		}, 5500);
 	}, []);
 
 	return (

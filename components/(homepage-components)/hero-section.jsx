@@ -54,7 +54,3 @@ export default function Herosection() {
 		</Swiper>
 	);
 }
-
-// height={500}
-// width={500}
-// className="object-cover w-full h-full"

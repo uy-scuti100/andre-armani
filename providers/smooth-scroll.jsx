@@ -6,7 +6,7 @@ function SmoothScroll({ children }) {
 	return (
 		<ReactLenis
 			root
-			options={{ lerp: 0.01, smoothWheel: true, syncTouch: true }}
+			options={{ lerp: 0.001, smoothWheel: true, syncTouch: true }}
 		>
 			{children}
 		</ReactLenis>
