@@ -1,19 +1,29 @@
-export default function MenuIcon() {
+export default function MenuIcon({ onClick }) {
 	return (
-		<svg
-			className="cursor-pointer svg-icon icon-menu md:hidden"
-			xmlns="http://www.w3.org/2000/svg"
-			width="18"
-			height="14"
-			viewBox="0 0 18 14"
-		>
-			<path
-				fill="currentColor"
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M17 1.5H0V0H17V1.5ZM17 7.5H0V6H17V7.5ZM0 13.5H17V12H0V13.5Z"
-				transform="translate(0.5)"
-			></path>
-		</svg>
+		<button>
+			<svg
+				onClick={onClick}
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="20"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-grip"
+			>
+				<circle cx="12" cy="5" r="1" />
+				<circle cx="19" cy="5" r="1" />
+				<circle cx="5" cy="5" r="1" />
+				<circle cx="12" cy="12" r="1" />
+				<circle cx="19" cy="12" r="1" />
+				<circle cx="5" cy="12" r="1" />
+				<circle cx="12" cy="19" r="1" />
+				<circle cx="19" cy="19" r="1" />
+				<circle cx="5" cy="19" r="1" />
+			</svg>
+		</button>
 	);
 }

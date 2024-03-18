@@ -1,50 +1,123 @@
 "use server";
 
-const fs = require("fs");
+import { client } from "../sanity/lib/client";
+import getBase64 from "../lib/getbase64";
+import { groq } from "next-sanity";
 
-export const fetchProducts = async () => {
+export const fetchAllArtwork = async () => {
 	try {
-		const jsonData = fs.readFileSync("constants/data/products.json", "utf8");
-		const data = JSON.parse(jsonData);
+		const products = await client.fetch(
+			groq`*[_type == "products"]{ 
+                _id,
+                name,
+                slug,
+                price, 
+                soldOut, 
+                sizes,
+                type,
+                description,
+                "images": images[].asset->url,
+        
+             }`
+		);
 
-		return data.products;
+		// Fetch base64 data for each image
+		const productsWithBase64 = await Promise.all(
+			products.map(async (product) => {
+				const base64 = await getBase64(product.images[0]);
+				return { ...product, base64 };
+			})
+		);
+
+		return productsWithBase64;
 	} catch (error) {
-		// Throw the error to indicate failure
-		throw new Error("Error reading data: " + error.message);
+		console.error("Error fetching products:", error);
 	}
 };
-export const fetchSingleProduct = async (slug) => {
+
+// fetch a single product
+export const fetchSingleArtwork = async (slug) => {
 	try {
-		// Decode the name parameter
-		const decodedName = decodeURIComponent(slug);
+		const product = await client.fetch(
+			groq`*[_type == "products" && slug.current == "${slug}"]{ 
+                _id,
+                name,
+                slug,
+                price, 
+                soldOut, 
+                sizes,
+                type,
+                description,
+                "images": images[].asset->url,
+             
+        
+             }`
+		);
 
-		const jsonData = fs.readFileSync("constants/data/products.json", "utf8");
-		const data = JSON.parse(jsonData);
+		// Fetch base64 data for each image
+		const productsWithBase64 = await Promise.all(
+			product?.map(async (product) => {
+				const base64 = await getBase64(product?.images[0]);
+				return { ...product, base64 };
+			})
+		);
 
-		// Find the product with the matching name
-		const product = data.products?.find((item) => {
-			const itemName = decodeURIComponent(item.slug);
-			return itemName === decodedName;
-		});
-
-		if (!product) {
-			throw new Error(`Product with slug '${decodedName}' not found`);
-		}
-		return product;
+		return productsWithBase64;
 	} catch (error) {
-		// Throw the error to indicate failure
-		throw new Error("Error reading data: " + error.message);
+		console.error("Error fetching product:", error);
 	}
 };
 
-// export const fetchRelatedProducts = async (type) => {
-// 	try {
-// 		const jsonData = fs.readFileSync("constants/data/products.json", "utf8");
-// 		const data = JSON.parse(jsonData);
+export const fetchRelatedProducts = async (slug, type) => {
+	try {
+		const relatedProducts = await client.fetch(
+			groq`*[_type == "products" && type == "${type}" && slug.current != "${slug}"] {
+          name,
+          slug,
+          price,
+          "images": images[].asset->url
+        }[0...9]` // Limit to 2 results (excluding the passed slug)
+		);
 
-// 		return data.products;
-// 	} catch (error) {
-// 		// Throw the error to indicate failure
-// 		throw new Error("Error reading data: " + error.message);
-// 	}
-// };
+		// Fetch base64 data for each image
+		const relatedProductsWithBase64 = await Promise.all(
+			relatedProducts.map(async (product) => {
+				const base64 = await getBase64(product.images[0]);
+				return { ...product, base64 };
+			})
+		);
+
+		return relatedProductsWithBase64;
+	} catch (error) {
+		console.error("Error fetching related products:", error);
+	}
+};
+
+export const fetchAllArtworkByType = async (type) => {
+	try {
+		const products = await client.fetch(
+			groq`*[_type == "products" && type == "${type}"]{
+                _id,
+                name,
+                slug,
+                price,
+                soldOut,
+                sizes,
+                type,
+                description,
+                "images": images[].asset->url,
+             }`
+		);
+
+		// Fetch base64 data for each image
+		const productsWithBase64 = await Promise.all(
+			products.map(async (product) => {
+				const base64 = await getBase64(product.images[0]);
+				return { ...product, base64 };
+			})
+		);
+		return productsWithBase64;
+	} catch (error) {
+		console.error("Error fetching products by type:", error);
+	}
+};

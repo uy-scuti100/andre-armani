@@ -1,11 +1,12 @@
-import { fetchProducts } from "../../actions/fetchings";
+import { fetchAllArtwork, fetchProducts } from "../../actions/fetchings";
 import { shuffleArray } from "../../lib/utils";
 
 import Productcard from "../global-components/product-card";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default async function Showcase() {
-	const products = await fetchProducts();
+	const products = await fetchAllArtwork();
 
 	const framedCanvasProducts = [];
 	const printedPaperProducts = [];
@@ -14,9 +15,9 @@ export default async function Showcase() {
 	for (let i = 0; i < products.length; i++) {
 		const prod = products[i];
 
-		if (prod.type === "art_collection") {
+		if (prod.type === "framed-canvas") {
 			framedCanvasProducts.push(prod);
-		} else if (prod.type === "prints_on_paper") {
+		} else if (prod.type === "printed-paper") {
 			printedPaperProducts.push(prod);
 		} else {
 			printedWearsProducts.push(prod);
@@ -34,14 +35,21 @@ export default async function Showcase() {
 			</h2>
 
 			<div className="mt-[45px]">
-				<div className="grid grid-cols-2 gap-2 md:gap-4 sm:grid-cols-3 place-items-center px-[0.685rem]">
-					{shuffledframedCanvas.slice(0, 6)?.map((item, i) => {
-						return (
-							<Link key={i} href={`/${item?.slug}`}>
-								<Productcard {...item} />
-							</Link>
-						);
-					})}
+				<div>
+					<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 place-items-center px-[0.685rem]">
+						{shuffledframedCanvas.slice(0, 6)?.map((item, i) => {
+							return (
+								<Link key={i} href={`/${item?.slug.current}`}>
+									<Productcard {...item} />
+								</Link>
+							);
+						})}
+					</div>
+				</div>
+				<div className="flex items-center justify-center mt-20">
+					<Button className="bg-[rgb(83,83,83)] hover:bg-[rgb(83,83,83)]  font-light w-auto rounded-none px-10 py-6 text-base text-white uppercase mb-8 shadow-none hover:scale-105 transition-transform duration-300 ease-in-out ">
+						<Link href={"/collection/framed-canvas"}>See More</Link>
+					</Button>
 				</div>
 			</div>
 
@@ -51,14 +59,21 @@ export default async function Showcase() {
 				</h2>
 
 				<div className="mt-[45px] px-[0.685rem]">
-					<div className="grid grid-cols-2 gap-4 md:grid-cols-3 place-items-center">
-						{shuffledfPaperProducts.slice(0, 6)?.map((item, i) => {
-							return (
-								<Link key={i} href={`/${item?.slug}`}>
-									<Productcard key={i} {...item} />
-								</Link>
-							);
-						})}
+					<div>
+						<div className="grid grid-cols-2 gap-4 md:grid-cols-3 place-items-center">
+							{shuffledfPaperProducts.slice(0, 6)?.map((item, i) => {
+								return (
+									<Link key={i} href={`/${item?.slug.current}`}>
+										<Productcard key={i} {...item} />
+									</Link>
+								);
+							})}
+						</div>
+					</div>
+					<div className="flex items-center justify-center mt-20">
+						<Button className="bg-[rgb(83,83,83)] hover:bg-[rgb(83,83,83)]  font-light w-auto rounded-none px-10 py-6 text-base text-white uppercase mb-8 shadow-none hover:scale-105 transition-transform duration-300 ease-in-out ">
+							<Link href={"/collection/paper-prints"}>See More</Link>
+						</Button>
 					</div>
 				</div>
 			</div>
@@ -66,14 +81,21 @@ export default async function Showcase() {
 				<h2 className="text-lg text-center uppercase tracking-[6px]">Wears</h2>
 
 				<div className="mt-[45px]">
-					<div className="grid grid-cols-2 gap-4 md:grid-cols-3 place-items-center px-[0.685rem]">
-						{shuffledWearsProducts.slice(0, 6)?.map((item, i) => {
-							return (
-								<Link key={i} href={`/${item?.slug}`}>
-									<Productcard key={i} {...item} />
-								</Link>
-							);
-						})}
+					<div>
+						<div className="grid grid-cols-2 gap-4 md:grid-cols-3 place-items-center px-[0.685rem]">
+							{shuffledWearsProducts.slice(0, 6)?.map((item, i) => {
+								return (
+									<Link key={i} href={`/${item?.slug.current}`}>
+										<Productcard key={i} {...item} />
+									</Link>
+								);
+							})}
+						</div>
+					</div>
+					<div className="flex items-center justify-center mt-20">
+						<Button className="bg-[rgb(83,83,83)] hover:bg-[rgb(83,83,83)]  font-light w-auto rounded-none px-10 py-6 text-base text-white uppercase mb-8 shadow-none hover:scale-105 transition-transform duration-300 ease-in-out ">
+							<Link href={"/collection/wears"}>See More</Link>
+						</Button>
 					</div>
 				</div>
 			</div>

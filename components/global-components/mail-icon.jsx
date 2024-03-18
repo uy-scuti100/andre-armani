@@ -3,7 +3,7 @@ import React from "react";
 export default function MailIcon() {
 	return (
 		<svg
-			class="svg-icon icon-mail "
+			className="svg-icon icon-mail "
 			xmlns="http://www.w3.org/2000/svg"
 			width="12"
 			height="20"

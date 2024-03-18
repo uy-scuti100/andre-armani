@@ -3,7 +3,7 @@
 		{
 			"name": "Sunset Serenity",
 			"slug": "sunset-serenity",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 299.99,
 			"description": "Capture the beauty of a tranquil sunset with this stunning canvas. Printed on 100% polyester base with acid-free print media, featuring a medium texture and scratch-resistant finish. The solid wood frame is fully finished with corner bumpers for level hanging and wall protection. Easily wipes clean with a damp cloth.",
 			"sizes": ["24x36", "30x45", "36x54"],
@@ -16,7 +16,7 @@
 		{
 			"name": "Mystic Forest",
 			"slug": "mystic-forest",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 249.99,
 			"description": "Step into a world of enchantment with this captivating forest scene. Crafted on high-quality polyester canvas with acid-free print media, offering a smooth texture and durable finish. The solid wood frame ensures stability and includes corner bumpers for secure hanging. Effortlessly maintain its beauty with a quick wipe-down using a damp cloth.",
 			"sizes": ["20x300", "24x36", "30x45"],
@@ -29,7 +29,7 @@
 		{
 			"name": "Ocean Dreams",
 			"slug": "ocean-dreams",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 349.99,
 			"description": "Immerse yourself in the calming serenity of ocean waves with this breathtaking canvas. Printed on premium polyester canvas with fade-resistant inks, ensuring vibrant colors that last. The solid wood frame provides durability and elegance, complete with corner bumpers for easy hanging. Keep it looking pristine with a simple wipe-down using a damp cloth.",
 			"sizes": ["24x13", "30x40", "36x48"],
@@ -42,7 +42,7 @@
 		{
 			"name": "Cityscape Reflections",
 			"slug": "cityscape-reflections",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 199.99,
 			"description": "Experience the energy of urban life with this captivating cityscape canvas. Printed on polyester canvas with a matte finish, offering exceptional clarity and depth. The solid wood frame is expertly crafted for stability and includes corner bumpers for hassle-free hanging. Keep it looking pristine with regular dusting using a soft cloth.",
 			"sizes": ["18x24", "24x36", "30x45"],
@@ -55,7 +55,7 @@
 		{
 			"name": "Abstract Fusion",
 			"slug": "abstract-fusion",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 279.99,
 			"description": "Elevate your space with the dynamic energy of abstract art. This canvas features bold colors and intricate patterns printed on premium polyester canvas. The solid wood frame adds sophistication and durability, complete with corner bumpers for easy hanging. Maintain its brilliance with occasional dusting using a soft brush or cloth.",
 			"sizes": ["24x36", "30x30", "36x36"],
@@ -68,7 +68,7 @@
 		{
 			"name": "Mountain Majesty",
 			"slug": "mountain-majesty",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 319.99,
 			"description": "Celebrate the grandeur of nature with this majestic mountain scene. Printed on high-quality polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame is expertly crafted for stability and includes corner bumpers for secure hanging. Keep it pristine with regular dusting using a soft, dry cloth.",
 			"sizes": ["24x36", "30x45", "40x60"],
@@ -81,7 +81,7 @@
 		{
 			"name": "Floral Harmony",
 			"slug": "floral-harmony",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 199.99,
 			"description": "Bring the beauty of nature indoors with this elegant floral canvas. Printed on premium polyester canvas with fade-resistant inks, ensuring vibrant colors that last. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
 			"sizes": ["16x20", "24x30", "30x40"],
@@ -94,7 +94,7 @@
 		{
 			"name": "Abstract Horizon",
 			"slug": "abstract-horizon",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 349.99,
 			"description": "Transform your space with the captivating allure of abstract art. This canvas features a harmonious blend of colors and shapes printed on premium polyester canvas. The solid wood frame adds sophistication and durability, complete with corner bumpers for easy hanging. Keep it looking pristine with regular dusting using a soft brush or cloth.",
 			"sizes": ["24x36", "30x45", "36x54"],
@@ -107,7 +107,7 @@
 		{
 			"name": "Vintage Charm",
 			"slug": "vintage-charm",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 179.99,
 			"description": "Add a touch of nostalgia to your space with this charming vintage canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
 			"sizes": ["18x24", "24x36", "30x40"],
@@ -120,7 +120,7 @@
 		{
 			"name": "Aurora Borealis",
 			"slug": "aurora-borealis",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 299.99,
 			"description": "Experience the breathtaking beauty of the northern lights with this stunning canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
 			"sizes": ["24x36", "30x45", "36x254"],
@@ -133,7 +133,7 @@
 		{
 			"name": "Serenity Seascape",
 			"slug": "serenity-seascape",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 259.99,
 			"description": "Escape to the tranquility of the sea with this serene seascape canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
 			"sizes": ["20x30", "24x36", "30x45"],
@@ -146,7 +146,7 @@
 		{
 			"name": "Dreamy Waterfall",
 			"slug": "dreamy-waterfall",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 379.99,
 			"description": "Embark on a journey to natural wonder with this captivating waterfall canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
 			"sizes": ["24x36", "30x45", "36x54"],
@@ -159,7 +159,7 @@
 		{
 			"name": "Rustic Landscape",
 			"slug": "rustic-landscape",
-			"type": "art_collection",
+			"type": "framed-canvas",
 			"price": 209.99,
 			"description": "Experience the beauty of the countryside with this rustic landscape canvas. Printed on premium polyester canvas with fade-resistant inks for lasting vibrancy. The solid wood frame provides stability and style, complete with corner bumpers for easy hanging. Keep it looking fresh with occasional dusting using a soft brush or cloth.",
 			"sizes": ["16x20", "24x136", "30x40"],

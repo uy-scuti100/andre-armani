@@ -147,3 +147,46 @@ export const fetchSingleCanvas = async (slug) => {
 					})}
 				</div> */
 }
+
+
+const [openNav, setOpenNav] = useState(false);
+	const navRef = useRef<HTMLDivElement | null>(null);
+	const tl = useRef<gsap.core.Timeline | null>(null);
+	useGSAP(() => {
+		tl.current = gsap.timeline({ paused: true });
+
+		tl.current
+			.to(navRef.current, {
+				duration: 0.8,
+				ease: "power4.inOut",
+				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+				pointerEvents: "all",
+			})
+			.from(
+				".menu__item",
+				{
+					duration: 1.7,
+					delay: 0,
+					x: -100,
+					opacity: 0,
+					stagger: {
+						amount: 0.4,
+					},
+					ease: "Expo.easeInOut",
+				},
+				"-=1"
+			)
+			.from(
+				".socials",
+				{
+					duration: 0.5,
+					y: 100,
+					opacity: 0,
+					stagger: {
+						amount: 0.4,
+					},
+					ease: "Expo.easeOut",
+				},
+				"-=1.4"
+			);
+	}, []);

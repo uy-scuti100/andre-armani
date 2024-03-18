@@ -1,16 +1,25 @@
 "use client";
-
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, FreeMode, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
 import { heroImages } from "../../constants/hero-images";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 export default function Herosection() {
+	useGSAP(() => {
+		gsap.to(".hero__swipe", {
+			duration: 1,
+			delay: 0,
+			clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+			ease: "power3.in",
+		});
+	});
+
 	return (
 		<Swiper
 			slidesPerView={1}
@@ -20,7 +29,8 @@ export default function Herosection() {
 			navigation={true}
 			loop
 			modules={[Pagination, Navigation, FreeMode, Autoplay]}
-			className="h-[85vh] md:h-screen w-[98%] imageSlider mainSlider -z-10"
+			className="h-[85vh] md:h-screen w-[98%] imageSlider mainSlider -z-10 hero__swipe"
+			style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
 		>
 			{heroImages?.map((image, i) => {
 				return (
@@ -40,6 +50,7 @@ export default function Herosection() {
 					</SwiperSlide>
 				);
 			})}
+			{/* <div className="absolute inset-0 z-50 bg-background home__animated" /> */}
 		</Swiper>
 	);
 }
