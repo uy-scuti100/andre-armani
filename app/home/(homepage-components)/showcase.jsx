@@ -1,9 +1,9 @@
-import { fetchAllArtwork, fetchProducts } from "../../actions/fetchings";
-import { shuffleArray } from "../../lib/utils";
+import { fetchAllArtwork } from "../../../actions/fetchings";
+import { shuffleArray } from "../../../lib/utils";
 
-import Productcard from "../global-components/product-card";
+import Productcard from "../../../components/global-components/product-card";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 
 export default async function Showcase() {
 	const products = await fetchAllArtwork();
@@ -25,7 +25,7 @@ export default async function Showcase() {
 	}
 
 	const shuffledframedCanvas = shuffleArray([...framedCanvasProducts]);
-	const shuffledfPaperProducts = shuffleArray([...printedPaperProducts]);
+	const shuffledPaperProducts = shuffleArray([...printedPaperProducts]);
 	const shuffledWearsProducts = shuffleArray([...printedWearsProducts]);
 
 	return (
@@ -61,7 +61,7 @@ export default async function Showcase() {
 				<div className="mt-[45px] px-[0.685rem]">
 					<div>
 						<div className="grid grid-cols-2 gap-4 md:grid-cols-3 place-items-center">
-							{shuffledfPaperProducts.slice(0, 6)?.map((item, i) => {
+							{shuffledPaperProducts.slice(0, 6)?.map((item, i) => {
 								return (
 									<Link key={i} href={`/${item?.slug.current}`}>
 										<Productcard key={i} {...item} />

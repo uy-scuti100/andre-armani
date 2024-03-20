@@ -10,6 +10,7 @@ import Header from "../components/global-components/header";
 import Footer from "../components/global-components/footer";
 import SmoothScroll from "../providers/smooth-scroll";
 import ReactQueryProvider from "../components/global-components/query-provider";
+import { Toaster } from "../components/ui/toaster";
 
 export const metadata = {
 	title: "ANDRE ARMANI",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
 					<SmoothScroll>
 						<Header />
 						{children}
+						<Toaster />
 						<Footer />
 					</SmoothScroll>
 				</ReactQueryProvider>

@@ -1,14 +1,20 @@
 "use client";
 
-import Image from "next/image";
+import Imagecomponent from "./image-component";
+import ImageSwitchcomponent from "./image-switch-component";
+import LinkComponent from "./link-component";
 import { useState } from "react";
-import { Button } from "../../../components/ui/button";
 import MailIcon from "../../../components/global-components/mail-icon";
 import ShareIcon from "../../../components/global-components/share-icon";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import SkeletonProductInfo from "../../../components/global-components/product-skeleton";
+import SkeletonProductInfo from "./product-skeleton";
 import RelatedProductsInfo from "./related-products-info";
+import { useSearchParams } from "next/navigation";
+import { useStore } from "../../../store/cart";
+import { toast } from "../../../components/ui/use-toast";
+import AddToCartButton from "./addtocart-button-component";
+import BuyItNowButton from "./buyitnow-button-component";
 
 export default function ProductInfo({ slug, children }) {
 	const {
@@ -24,20 +30,6 @@ export default function ProductInfo({ slug, children }) {
 	});
 
 	const data = productData?.[0];
-	const [slider, setSlider] = useState(0);
-	const [selectedSize, setSelectedSize] = useState(data?.sizes?.[0]);
-	const descriptions = data?.description?.split(".");
-
-	// Calculate price based on selected size index
-	const calculatePrice = () => {
-		if (!selectedSize) return data?.price; // Default to base price if no size selected
-
-		const sizeIndex = data.sizes.indexOf(selectedSize);
-		const priceIncrease = 50 * sizeIndex; // Price increase based on size index
-		const amount = (parseFloat(data?.price) + priceIncrease).toFixed(2);
-		return amount;
-	};
-
 	if (isError) {
 		return <div>error</div>;
 	}
@@ -49,20 +41,95 @@ export default function ProductInfo({ slug, children }) {
 		return <div>No data found</div>;
 	}
 
+	const searchParams = useSearchParams();
+	const [slider, setSlider] = useState(0);
+	const selectedSize = searchParams.get("size") ?? data?.sizes?.[0];
+	const descriptions = data?.description?.split(".");
+
+	const calculatePrice = () => {
+		if (!selectedSize) return data?.price; // Default to base price if no size selected
+
+		const sizeIndex = data.sizes.indexOf(selectedSize);
+		const priceIncrease = 50 * sizeIndex; // Price increase based on size index
+		const amount = (parseFloat(data?.price) + priceIncrease).toFixed(2);
+		return amount;
+	};
+
+	const addItem = useStore((state) => state.addToCart);
+	const cart = useStore((state) => state.cart);
+
+	const handleAddToCart = (data) => {
+		// Check if data and data.slug are defined
+		if (data && data.slug && data.slug.current) {
+			const existingItem = cart.find(
+				(item) =>
+					item._id === data.slug.current && item.selectedSize === selectedSize
+			);
+
+			if (existingItem) {
+				toast({
+					variant: "destructive",
+					title: "Already in cart",
+					description:
+						"You have already added this item to cart. Increase quantity from cart.",
+				});
+			} else {
+				addItem({
+					_id: data.slug.current,
+					name: data.name,
+					image: data.images[0],
+					price: data.price,
+					type: data.type,
+
+					selectedSize,
+				});
+
+				toast({
+					title: `Added to cart!`,
+					description:
+						"You can check your cart by clicking the cart icon on the top right corner of the screen.",
+				});
+			}
+		} else {
+			console.error("Invalid data or data.slug is undefined");
+		}
+	};
+	// const addToCart = (data) => {
+	// 	addItem({
+	// 		_id: data.slug.current,
+	// 		name: data.name,
+	// 		image: data.images[0],
+	// 		price: data.price,
+	// 		selectedSize,
+	// 	});
+	// 	const existingItem = cart.find(
+	// 		(item) =>
+	// 			item._id === data.slug.current && item.selectedSize === selectedSize
+	// 	);
+	// 	if (existingItem) {
+	// 		toast({
+	// 			title: `Added to cart!`,
+	// 			description:
+	// 				"You can check your cart by clicking the cart icon on the top right corner of the screen.",
+	// 		});
+	// 	} else {
+	// 		toast({
+	// 			variant: "destructive",
+	// 			title: "Already in cart",
+	// 			description: "You should check your cart.",
+	// 		});
+	// 	}
+	// };
+
 	return (
 		<section>
 			<figure className="flex flex-col justify-center gap-10 px-[0.63rem] lg:flex-row">
 				<div className="relative items-center justify-center sm:w-[80%] sm:mx-auto w-full flex h-[70vh] md:h-[80vh] lg:order-2 lg:basis-[60%]">
 					{data.images && (
-						<Image
+						<Imagecomponent
 							src={data.images[slider]}
 							alt={`${data.name}'s image-${slider + 1}`}
-							height={500}
-							width={300}
-							className="object-cover w-full h-full"
-							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-							placeholder="blur"
-							blurDataURL={data.base64}
+							base64={data.base64}
 						/>
 					)}
 				</div>
@@ -70,19 +137,16 @@ export default function ProductInfo({ slug, children }) {
 					<div className="flex items-center justify-center gap-5 lg:flex-col">
 						{data.images.map((image, i) => {
 							return (
-								<div onClick={() => setSlider(i)} key={i}>
-									<Image
+								<button onClick={() => setSlider(i)} key={i}>
+									<ImageSwitchcomponent
 										src={image}
-										height={100}
-										width={100}
+										alt={`${data.name}'s image-${i + 1}`}
+										base64={data.base64}
 										className={`w-[80px] p-1 h-[80px] object-cover cursor-pointer ${
 											i === slider && "border-2 border-primary rounded"
 										}`}
-										alt={`${data.name}'s image`}
-										placeholder="blur"
-										blurDataURL={data.base64}
 									/>
-								</div>
+								</button>
 							);
 						})}
 					</div>
@@ -93,7 +157,6 @@ export default function ProductInfo({ slug, children }) {
 
 					<div className="pb-6 text-sm font-light ">
 						{data && (
-							// ... other code
 							<p className="pb-8 text-sm font-light "> ${calculatePrice()}</p>
 						)}
 					</div>
@@ -117,33 +180,29 @@ export default function ProductInfo({ slug, children }) {
 					</p>
 					<div className="flex flex-wrap items-center gap-6 pb-8 text-sm font-light ">
 						{data.sizes.map((size, i) => (
-							<div
-								key={i}
-								onClick={() => setSelectedSize(size)}
-								className="rounded-none"
-							>
+							<div key={i} className="rounded-none">
 								{data.type === "printed_hoodies" ? (
-									<Button
-										href={"#"}
-										className={`rounded-none hover:text-background  text-black font-light text-xs ${
+									<LinkComponent
+										href={size}
+										className={
 											selectedSize === size
 												? "bg-black text-white"
 												: "bg-[#C7C7C7]"
-										}`}
+										}
 									>
 										{size}
-									</Button>
+									</LinkComponent>
 								) : (
-									<Button
-										href={"#"}
-										className={`rounded-none hover:text-background text-black font-light text-xs ${
+									<LinkComponent
+										href={size}
+										className={
 											selectedSize === size
 												? "bg-black text-white"
 												: "bg-[#C7C7C7]"
-										}`}
+										}
 									>
 										"{size}"
-									</Button>
+									</LinkComponent>
 								)}
 							</div>
 						))}
@@ -174,12 +233,12 @@ export default function ProductInfo({ slug, children }) {
 					</div>
 
 					<div className="my-12">
-						<Button className="bg-[rgb(83,83,83)] hover:bg-[rgb(83,83,83)]  font-light w-full rounded-none py-6 text-base text-white uppercase mb-8 shadow-none hover:scale-105 transition-transform duration-300 ease-in-out ">
-							Add To cart
-						</Button>
-						<Button className="w-full py-6 text-base font-light uppercase transition-transform duration-300 ease-in-out rounded-none shadow-none bg-foreground/10 hover:bg-foreground/10 text-foreground hover:scale-105">
-							buy it now
-						</Button>
+						<AddToCartButton
+							onClick={() => handleAddToCart(data)}
+							children={"add to cart"}
+						/>
+
+						<BuyItNowButton onClick={() => {}} children={"	buy it now"} />
 					</div>
 				</figcaption>
 			</figure>
@@ -188,7 +247,7 @@ export default function ProductInfo({ slug, children }) {
 					Features of <span className="font-me">{data.name}</span>:
 				</pre>
 				<menu className="flex flex-col gap-6">
-					{descriptions.slice(0, -1).map((desc, i) => (
+					{descriptions?.slice(0, -1).map((desc, i) => (
 						<li className="list-disc" key={i}>
 							{desc}.
 						</li>
@@ -204,3 +263,16 @@ export default function ProductInfo({ slug, children }) {
 		</section>
 	);
 }
+
+// href={`${new URLSearchParams({
+//     size: selectedSize
+// })}`}
+// searchParams.get("size") || data?.sizes?.[0] || "";
+// const [selectedSize, setSelectedSize] = useState(data?.sizes?.[0]);
+// addItem({
+// 	id: data._id,
+// 	name: data.name,
+// 	image: data.images[0],
+// 	price: data.price,
+// 	selectedSize,
+// })

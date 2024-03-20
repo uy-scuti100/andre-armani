@@ -1,78 +1,91 @@
 import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 
-// Initial state
 const initialState = {
 	cart: [],
 	favorites: [],
 };
 
-// Zustand store
-const useStore = create((set) => ({
-	...initialState,
+export const useStore = create(
+	persist(
+		(set, get) => ({
+			...initialState,
+			addToCart: (product) =>
+				set((state) => {
+					const {
+						_id,
+						name,
+						image,
+						price,
+						quantity = 1,
+						selectedSize,
+					} = product; // Destructure product data
 
-	// Actions
-	addToCart: (productId, selectedSize = undefined) =>
-		set((state) => {
-			const existingItem = state.cart.find(
-				(item) => item.productId === productId && item.size === selectedSize
-			);
+					const existingItem = state.cart.find(
+						(item) => item._id === _id && item.selectedSize === selectedSize
+					);
 
-			if (existingItem) {
-				// If the same product with the same size already exists, increase its quantity
-				return {
-					cart: state.cart.map((item) =>
-						item.productId === productId && item.size === selectedSize
-							? { ...item, quantity: item.quantity + 1 }
-							: item
+					if (existingItem) {
+						// Update quantity for existing item
+						return {
+							// cart: state.cart.map((item) =>
+							// 	item.id === id && item.selectedSize === selectedSize
+							// 		? { ...item, quantity: item.quantity + quantity }
+							// 		: item
+							// ),
+						};
+					} else {
+						// Add new item to cart
+						return {
+							cart: [
+								...state.cart,
+								{ _id, name, image, price, quantity, selectedSize },
+							],
+						};
+					}
+				}),
+			removeFromCart: (productId, selectedSize) =>
+				set((state) => ({
+					cart: state.cart.filter(
+						(item) =>
+							item._id !== productId || item.selectedSize !== selectedSize
 					),
-				};
-			} else {
-				// Otherwise, add a new cart item with the selected size (or default size)
-				const size = selectedSize || state.defaultSize(productId); // Use selected size or default
-				return {
-					cart: [...state.cart, { productId, size, quantity: 1 }],
-				};
-			}
+				})),
+
+			increaseQuantity: (productId, selectedSize) =>
+				set((state) => {
+					const updatedCart = [...state.cart];
+					const index = updatedCart.findIndex(
+						(item) =>
+							item._id === productId && item.selectedSize === selectedSize
+					);
+					if (index !== -1) {
+						updatedCart[index].quantity++; // Increase quantity
+					}
+					return { cart: updatedCart };
+				}),
+
+			decreaseQuantity: (productId, selectedSize) =>
+				set((state) => {
+					const updatedCart = [...state.cart];
+					const index = updatedCart.findIndex(
+						(item) =>
+							item._id === productId && item.selectedSize === selectedSize
+					);
+					if (index !== -1) {
+						if (updatedCart[index].quantity > 1) {
+							updatedCart[index].quantity--; // Decrease quantity if greater than 1
+						} else {
+							updatedCart.splice(index, 1); // Remove item if quantity is 1
+						}
+					}
+					return { cart: updatedCart };
+				}),
+			removeAll: () => set({ cart: [] }),
 		}),
-
-	removeFromCart: (productId) =>
-		set((state) => ({
-			cart: state.cart.filter((id) => id !== productId),
-		})),
-
-	addToFavorites: (productId) =>
-		set((state) => ({
-			favorites: [...state.favorites, productId],
-		})),
-
-	removeFromFavorites: (productId) =>
-		set((state) => ({
-			favorites: state.favorites.filter((id) => id !== productId),
-		})),
-
-	increaseQuantity: (productId) =>
-		set((state) => {
-			const updatedCart = [...state.cart];
-			const index = updatedCart.findIndex((id) => id === productId);
-			if (index !== -1) {
-				updatedCart.splice(index, 1, productId);
-			}
-			return { cart: updatedCart };
-		}),
-
-	decreaseQuantity: (productId) =>
-		set((state) => {
-			const updatedCart = [...state.cart];
-			const index = updatedCart.findIndex((id) => id === productId);
-			if (index !== -1) {
-				updatedCart.splice(index, 1);
-			}
-			return { cart: updatedCart };
-		}),
-
-	getTotalQuantityInCart: () => {
-		return state.cart.length;
-	},
-}));
-
-export default useStore;
+		{
+			name: "artwork-storage",
+			storage: createJSONStorage(() => localStorage),
+		}
+	)
+);

@@ -3,8 +3,7 @@ import Productcard from "../../../components/global-components/product-card";
 import { shuffleArray } from "../../../lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { fetchRelatedProducts } from "../../../actions/fetchings";
-import RelatedProductsSkeleton from "../../../components/global-components/related-products-skeleton";
-import SkeletonProductInfo from "../../../components/global-components/product-skeleton";
+import RelatedProductsSkeleton from "./related-products-skeleton";
 
 export default function RelatedProductsInfo({ type, slug }) {
 	const { data, isLoading, isFetching, isError, status } = useQuery({
@@ -13,7 +12,6 @@ export default function RelatedProductsInfo({ type, slug }) {
 		staleTime: 1000 * 60 * 5,
 	});
 
-	console.log(data);
 	if (isError) {
 		return <div>error</div>;
 	}

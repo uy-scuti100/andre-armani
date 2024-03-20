@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, FreeMode, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-import { heroImages } from "../../constants/hero-images";
+import { heroImages } from "../../../constants/hero-images";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 export default function Herosection() {

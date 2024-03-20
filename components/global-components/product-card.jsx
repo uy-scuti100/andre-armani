@@ -10,6 +10,7 @@ export default function Productcard({ name, slug, price, images, i, base64 }) {
 					alt={`${name}-${i}`}
 					width={500}
 					height={500}
+					priority={true}
 					className=" object-cover w-full h-[200px]  md:h-[300px] lg:[450px]"
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					placeholder="blur"

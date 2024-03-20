@@ -4,11 +4,12 @@ import MenuIcon from "./menu-icon";
 import Logosvg from "./logo-svg";
 import SearchIcon from "./search-icon";
 import Shoppingcart from "./shopping-cart";
-import useStore from "../../store/cart";
-import { useEffect, useRef, useState } from "react";
+import { useStore } from "../../store/cart";
+import { useRef, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import navbarImage from "../../assets/navbar-img.webp";
+import CartProducts from "./cart-products";
 import {
 	Sheet,
 	SheetClose,
@@ -24,9 +25,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import AddToCartButton from "../../app/[slug]/components/addtocart-button-component";
+import BuyItNowButton from "../../app/[slug]/components/buyitnow-button-component";
 
 export default function Header() {
-	const [quantityInCart, setQuantityInCart] = useState(0);
+	const [totalProductsCount, setTotalProductsCount] = useState(0);
 	const [searchInput, setSearchInput] = useState(false);
 	// const [searchTerm, setSearchTerm] = useState("");
 	// const [searchOpen, setSearchOpen] = useState(false);
@@ -102,12 +105,19 @@ export default function Header() {
 			tl.current?.play();
 		}
 	};
-	useStore.subscribe(
-		(cart) => {
-			setQuantityInCart(useStore.getTotalQuantityInCart());
-		},
-		(state) => state.cart
-	);
+
+	const cart = useStore((state) => state.cart);
+	const remove = useStore((state) => state.removeAll);
+
+	useEffect(() => {
+		// Calculate total count of products in the cart
+		let totalCount = 0;
+		cart.forEach((item) => {
+			totalCount += item.quantity;
+		});
+		setTotalProductsCount(totalCount);
+	}, [cart]);
+
 	return (
 		<header
 			ref={pathname === "/" ? null : headerRef}
@@ -137,24 +147,87 @@ export default function Header() {
 									<Shoppingcart />
 								</button>
 							</SheetTrigger>
-							<SheetContent>
+							<SheetContent className="flex flex-col h-full justfy-between">
 								<SheetHeader>
-									<SheetTitle>
-										<Link href="/" className="font-mono font-bold uppercase">
-											André Armani
+									<SheetTitle className="mb-6">
+										<Link
+											href="/"
+											className="font-light uppercase tracking-[6px] "
+										>
+											Your Cart
 										</Link>
 									</SheetTitle>
-									<SheetDescription>
-										Make changes to your profile here. Click save when you're
-										done.
-									</SheetDescription>
 								</SheetHeader>
+								<>
+									{totalProductsCount > 0 ? (
+										<>
+											<div className="overflow-y-auto h-[90%]">
+												<CartProducts />
+											</div>
+											<SheetFooter
+												className={`flex flex-col  ${
+													totalProductsCount > 0 ? "" : "justify-center"
+												}`}
+											>
+												<div className="flex flex-col space-y-2">
+													<div className="flex items-center justify-between w-full pt-5">
+														<div>
+															<p className="font-medium "> Subtotal </p>
+														</div>
+														<div>
+															$
+															{cart
+																.reduce(
+																	(total, product) =>
+																		total + product.price * product.quantity,
+																	0
+																)
+																.toFixed(2)}
+														</div>
+													</div>
+
+													<p className="pb-10 text-xs font-light">
+														Taxes and shipping calculated at checkout
+													</p>
+												</div>
+												<div className="flex justify-center w-full space-x-4">
+													<AddToCartButton
+														onClick={() => {}}
+														className="px-4 py-4 hover:scale-1"
+													>
+														View Cart
+													</AddToCartButton>
+													<BuyItNowButton
+														onClick={() => {}}
+														className="px-4 py-4 hover:scale-1"
+													>
+														Checkout
+													</BuyItNowButton>
+												</div>
+												<div>
+													<BuyItNowButton
+														onClick={remove}
+														className="px-4 py-4 text-white bg-destructive hover:bg-red-600 hover:scale-1"
+													>
+														empty cart
+													</BuyItNowButton>
+												</div>
+											</SheetFooter>
+										</>
+									) : (
+										<>
+											<div className="mt-20 text-center">
+												Your cart is empty
+											</div>
+										</>
+									)}
+								</>
 							</SheetContent>
 						</Sheet>
 
-						{quantityInCart > 0 && (
+						{totalProductsCount > 0 && (
 							<span className="flex text-black items-center justify-center w-6 h-6 text-xs font-medium bg-[#C7C7C7] rounded-full ">
-								{quantityInCart}
+								{totalProductsCount}
 							</span>
 						)}
 					</div>
