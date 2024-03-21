@@ -10,6 +10,7 @@ export default function Featureproduct() {
 					height={400}
 					alt="coming-soon"
 					className="object-cover w-full h-full"
+					priority={true}
 				/>
 			</div>
 			<div className="flex flex-col items-center justify-center flex-1 w-full h-full gap-10 md:order- bg-muted">

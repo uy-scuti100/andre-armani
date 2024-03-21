@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import SkeletonProductInfo from "./product-skeleton";
 import RelatedProductsInfo from "./related-products-info";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useStore } from "../../../store/cart";
 import { toast } from "../../../components/ui/use-toast";
 import AddToCartButton from "./addtocart-button-component";
@@ -45,6 +45,7 @@ export default function ProductInfo({ slug, children }) {
 	const [slider, setSlider] = useState(0);
 	const selectedSize = searchParams.get("size") ?? data?.sizes?.[0];
 	const descriptions = data?.description?.split(".");
+	const router = useRouter();
 
 	const calculatePrice = () => {
 		if (!selectedSize) return data?.price; // Default to base price if no size selected
@@ -238,7 +239,12 @@ export default function ProductInfo({ slug, children }) {
 							children={"add to cart"}
 						/>
 
-						<BuyItNowButton onClick={() => {}} children={"	buy it now"} />
+						<BuyItNowButton
+							onClick={() => {
+								router.push("/checkout");
+							}}
+							children={"Proceed to checkout"}
+						/>
 					</div>
 				</figcaption>
 			</figure>

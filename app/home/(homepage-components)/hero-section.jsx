@@ -45,12 +45,11 @@ export default function Herosection() {
 							(max-width: 768px) 75vw,
 							(max-width: 1060px) 50vw,
 							33vw"
-							priority
+							priority={true}
 						/>
 					</SwiperSlide>
 				);
 			})}
-			{/* <div className="absolute inset-0 z-50 bg-background home__animated" /> */}
 		</Swiper>
 	);
 }

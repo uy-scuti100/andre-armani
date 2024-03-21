@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Productcard from "../../../components/global-components/product-card";
 import { shuffleArray } from "../../../lib/utils";
@@ -9,7 +10,7 @@ export default function RelatedProductsInfo({ type, slug }) {
 	const { data, isLoading, isFetching, isError, status } = useQuery({
 		queryKey: ["related-products", type],
 		queryFn: () => fetchRelatedProducts(slug, type),
-		staleTime: 1000 * 60 * 5,
+		staleTime: 1000 * 60 * 500,
 	});
 
 	if (isError) {
