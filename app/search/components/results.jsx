@@ -4,7 +4,6 @@ import React from "react";
 import Loading from "../components/loading";
 import { useQuery } from "@tanstack/react-query";
 import { fetchSearchProducts } from "../../../actions/fetchings";
-import Image from "next/image";
 import Productcard from "../../../components/global-components/product-card";
 import Link from "next/link";
 
