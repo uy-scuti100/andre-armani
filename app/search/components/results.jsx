@@ -9,10 +9,6 @@ import Productcard from "../../../components/global-components/product-card";
 import Link from "next/link";
 
 export default function Results({ query }) {
-	// <div className="p-4 pb-0 max-h-[70vh] w-full overflow-y-auto">
-	// 				<Loading />
-	// 			</div>
-
 	const {
 		data: productData,
 		isError,
