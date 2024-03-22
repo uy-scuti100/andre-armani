@@ -249,7 +249,7 @@ export default function ProductInfo({ slug, children }) {
 				</figcaption>
 			</figure>
 			<div className="px-[0.63rem] mt-20 ">
-				<pre className="pb-8 text-sm font-light ">
+				<pre className="pb-8 text-sm font-semibold ">
 					Features of <span className="font-me">{data.name}</span>:
 				</pre>
 				<menu className="flex flex-col gap-6">

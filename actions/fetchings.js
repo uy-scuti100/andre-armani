@@ -121,3 +121,35 @@ export const fetchAllArtworkByType = async (type) => {
 		console.error("Error fetching products by type:", error);
 	}
 };
+
+export const fetchSearchProducts = async (query) => {
+	try {
+		const products = await client.fetch(
+			groq`*[_type == "products"  && (name match "*${query}*" || slug match "*${query}*" || description match "*${query}*")]{
+
+                name,
+                slug,
+                price,
+                "images": images[].asset->url,
+                _score,
+                _type == "product" => {
+                    name match "${query}*" => 5,
+                    slug match "${query}*" => 3,
+                    description match "${query}*" => 2
+                }
+            }`
+		);
+
+		// Fetch base64 data for each image
+		const productsWithBase64 = await Promise.all(
+			products.map(async (product) => {
+				const base64 = await getBase64(product.images[0]);
+				return { ...product, base64 };
+			})
+		);
+		return productsWithBase64;
+	} catch (error) {
+		console.error("Error fetching search results:", error);
+		return [];
+	}
+};

@@ -14,7 +14,11 @@ export default function RelatedProductsInfo({ type, slug }) {
 	});
 
 	if (isError) {
-		return <div>error</div>;
+		return (
+			<div className="mt-20 text-2xl font-medium text-center uppercase">
+				Unable to fetch Related Products
+			</div>
+		);
 	}
 	if (isFetching || isLoading || status.pending) {
 		return <RelatedProductsSkeleton />;
@@ -30,7 +34,7 @@ export default function RelatedProductsInfo({ type, slug }) {
 		<section className="mt-32">
 			{shuffledProducts && shuffledProducts?.length > 0 && (
 				<>
-					<h2 className="text-lg text-center uppercase">
+					<h2 className="text-lg font-semibold text-center uppercase">
 						you might want to check these out
 					</h2>
 					<div className="grid grid-cols-2 gap-4 mt-28 md:grid-cols-3 place-items-center">

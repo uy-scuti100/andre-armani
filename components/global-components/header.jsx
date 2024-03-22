@@ -1,5 +1,5 @@
 "use client";
-import { Input } from "../ui/input";
+import Search from "./search-component";
 import MenuIcon from "./menu-icon";
 import Logosvg from "./logo-svg";
 import SearchIcon from "./search-icon";
@@ -12,9 +12,7 @@ import navbarImage from "../../assets/navbar-img.webp";
 import CartProducts from "./cart-products";
 import {
 	Sheet,
-	SheetClose,
 	SheetContent,
-	SheetDescription,
 	SheetFooter,
 	SheetHeader,
 	SheetTitle,
@@ -30,16 +28,17 @@ import BuyItNowButton from "../../app/[slug]/components/buyitnow-button-componen
 
 export default function Header() {
 	const [totalProductsCount, setTotalProductsCount] = useState(0);
-	const [searchInput, setSearchInput] = useState(false);
-	// const [searchTerm, setSearchTerm] = useState("");
-	// const [searchOpen, setSearchOpen] = useState(false);
 	const [openNav, setOpenNav] = useState(false);
+	const [openSearch, setOpenSearch] = useState(false);
 	const headerRef = useRef();
 	const navRef = useRef();
+	const searchRef = useRef();
 	const tl = useRef();
+	const tl2 = useRef();
 	const pathname = usePathname();
 	useGSAP(() => {
 		tl.current = gsap.timeline({ paused: true });
+		tl2.current = gsap.timeline({ paused: true });
 
 		tl.current
 			.to(navRef.current, {
@@ -71,7 +70,6 @@ export default function Header() {
 				},
 				"-=1"
 			)
-
 			.from(
 				".socials",
 				{
@@ -95,6 +93,14 @@ export default function Header() {
 				},
 				"-=1.3"
 			);
+
+		tl2.current.to(searchRef.current, {
+			duration: 0.5,
+			display: "flex",
+			opacity: 1,
+			y: 0,
+			ease: "expo.easeOut",
+		});
 	}, []);
 
 	const toggleNavOpen = () => {
@@ -105,12 +111,19 @@ export default function Header() {
 			tl.current?.play();
 		}
 	};
+	const toggleSearchOpen = () => {
+		setOpenSearch((prev) => !prev);
+		if (openSearch) {
+			tl2.current?.reverse();
+		} else {
+			tl2.current?.play();
+		}
+	};
 
 	const cart = useStore((state) => state.cart);
 	const remove = useStore((state) => state.removeAll);
 
 	useEffect(() => {
-		// Calculate total count of products in the cart
 		let totalCount = 0;
 		cart.forEach((item) => {
 			totalCount += item.quantity;
@@ -123,7 +136,7 @@ export default function Header() {
 			ref={pathname === "/" ? null : headerRef}
 			className="max-w-[1200px] fixed z-40 flex flex-col items-center justify-center w-full mx-auto bg-background overflow-hidden"
 		>
-			<nav className="flex items-center justify-between py-5 w-full px-[0.63rem] z-50">
+			<nav className="flex items-center justify-between py-5 w-full px-[1.25rem] z-50">
 				<menu className="md:flex items-center justify-center space-x-6 text-[13px] uppercase hidden z-[999999]">
 					<Link href={"/collection"}>Art</Link>
 					<Link href={"/collection/wears"}>Wear</Link>
@@ -137,7 +150,7 @@ export default function Header() {
 					André Armani
 				</Link>
 				<div className="text-[13px] uppercase flex items-center gap-5">
-					<button onClick={() => setSearchInput((prev) => !prev)}>
+					<button onClick={toggleSearchOpen}>
 						<SearchIcon />
 					</button>
 					<div className="flex items-center space-x-[2px]">
@@ -234,21 +247,6 @@ export default function Header() {
 				</div>
 			</nav>
 
-			<div
-				className={`px-[0.63rem] relative mx-auto w-full items-center ${
-					searchInput
-						? "block w-auto h-auto opacity-100 "
-						: "hidden w-0 h-0 opacity-0"
-				} my-5 overflow-hidden duration-700 ease-in-out flex `}
-			>
-				<Input
-					className="overflow-hidden text-xs outline-none"
-					placeholder="Search..."
-				/>
-				<button className=" bg-[#C7C7C7] px-4 py-2 absolute right-2 rounded-br-md rounded-tr-md flex items-center justify-center">
-					<SearchIcon />
-				</button>
-			</div>
 			{/* mobile-nav */}
 			<div
 				ref={navRef}
@@ -343,6 +341,13 @@ export default function Header() {
 						</Link>
 					</div>
 				</div>
+			</div>
+
+			<div
+				ref={searchRef}
+				className=" abslute justify-center w-full hidden opacity-0 translate-y-[-300%]"
+			>
+				<Search />
 			</div>
 		</header>
 	);

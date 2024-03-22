@@ -3,7 +3,7 @@ import React from "react";
 export default function SearchIcon() {
 	return (
 		<svg
-			className="svg-icon icon-search cursor-pointer hover:translate-y-[-2px] transition-transform duration-300 ease-in-out"
+			className="svg-icon icon-search hover:translate-y-[-2px] transition-transform duration-300 ease-in-out"
 			xmlns="http://www.w3.org/2000/svg"
 			width="18"
 			height="19"
