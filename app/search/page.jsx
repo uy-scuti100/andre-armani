@@ -1,6 +1,6 @@
 import { fetchSearchProducts } from "../../actions/fetchings";
 
-import Results from "./components/results";
+import Results from "../../components/global-components";
 import {
 	dehydrate,
 	HydrationBoundary,
