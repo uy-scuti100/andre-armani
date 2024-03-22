@@ -7,7 +7,7 @@ import { fetchSearchProducts } from "../../actions/fetchings";
 import Productcard from "../global-components/product-card";
 import Link from "next/link";
 
-export default function Results({ query }) {
+export default function Fetchings({ query }) {
 	const {
 		data: productData,
 		isError,

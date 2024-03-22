@@ -1,6 +1,6 @@
 import { fetchSearchProducts } from "../../actions/fetchings";
 
-import Results from "../../components/global-components";
+import Fetchings from "./components/fetchings";
 import {
 	dehydrate,
 	HydrationBoundary,
@@ -27,7 +27,7 @@ export default async function SearchPage({ searchParams }) {
 
 				<div className="w-full p-4">
 					<HydrationBoundary state={dehydrate(queryClient)}>
-						<Results query={query} />
+						<Fetchings query={query} />
 					</HydrationBoundary>
 				</div>
 			</div>
