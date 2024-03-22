@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import Loading from "../../app/search/components/loading";
+import Loading from "./loading";
 import { useQuery } from "@tanstack/react-query";
-import { fetchSearchProducts } from "../../actions/fetchings";
-import Productcard from "../global-components/product-card";
+import { fetchSearchProducts } from "../../../actions/fetchings";
+import Productcard from "../../../components/global-components/product-card";
 import Link from "next/link";
 
 export default function Fetchings({ query }) {
