@@ -36,9 +36,13 @@ export default function Results({ products, setOpenDrawer }) {
 					<div className="p-4 pb-0 max-h-[70vh] w-full overflow-y-auto">
 						<div className="flex flex-wrap items-center justify-around gap-4">
 							{Array(4)
-								.fill(null, i)
-								.map(() => (
-									<figcaption key={i} className="animate-pulse">
+								.fill(null, 0) // Key index starts from 0
+								.map((_, i) => (
+									<figcaption
+										key={i}
+										className="animate-pulse"
+										id={`image-placeholder-${i}`}
+									>
 										<div className="h-[150px] w-[150px] bg-muted-foreground "></div>
 										<div className="mt-3 bg-muted-foreground h-[5px] w-full rounded-md"></div>
 									</figcaption>
