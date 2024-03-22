@@ -29,7 +29,9 @@ export default function Fetchings({ query }) {
 	}
 
 	if (productData && productData.length == 0) {
-		return <div>No data found</div>;
+		return (
+			<div className="text-xl font-semibold text-center">No results found</div>
+		);
 	}
 
 	return (

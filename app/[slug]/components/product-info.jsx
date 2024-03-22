@@ -144,7 +144,8 @@ export default function ProductInfo({ slug, children }) {
 										alt={`${data.name}'s image-${i + 1}`}
 										base64={data.base64}
 										className={`w-[80px] p-1 h-[80px] object-cover cursor-pointer ${
-											i === slider && "border-2 border-primary rounded"
+											i === slider &&
+											" ring-2 ring-inset ring-foreground rounded"
 										}`}
 									/>
 								</button>

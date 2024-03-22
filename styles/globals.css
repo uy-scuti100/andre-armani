@@ -15,6 +15,13 @@
 	height: 0;
 } */
 
+.home-home::-webkit-scrollbar,
+.home-home::-webkit-scrollbar-button,
+.home-home::-webkit-scrollbar-thumb {
+	width: 0;
+	height: 0;
+}
+
 :root {
 	--nuni: "Nunito", sans-serif;
 }
@@ -102,7 +109,7 @@
 		@apply border-border;
 	}
 	body {
-		@apply overflow-x-hidden font-mono bg-background text-foreground text-[0.938rem] font-light max-w-[75rem] mx-auto;
+		@apply overflow-x-hidden font-mono bg-background text-foreground text-[0.938rem] font-light mx-auto;
 	}
 
 	h1,
@@ -167,9 +174,22 @@
 		animation: svg-animation 3s ease alternate-reverse infinite 0.5s;
 	}
 
+	.logo_carousel {
+		animation: carousel 210s linear infinite;
+	}
+
 	@keyframes svg-animation {
 		to {
 			stroke-dashoffset: 0;
+		}
+	}
+	@keyframes carousel {
+		from {
+			left: translateX(0);
+		}
+
+		to {
+			transform: translateX(-100%);
 		}
 	}
 

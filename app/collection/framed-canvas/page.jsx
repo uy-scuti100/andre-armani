@@ -12,7 +12,7 @@ export default async function page() {
 		<section className="pt-[6.438rem]">
 			{" "}
 			<h2 className="text-lg text-center uppercase tracking-[6px]">
-				Framed canvas page
+				Framed canvas
 			</h2>
 			<div className="mt-[45px] px-[0.685rem]">
 				<div className="grid grid-cols-2 gap-4 md:grid-cols-3 place-items-center">

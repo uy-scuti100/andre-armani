@@ -134,7 +134,7 @@ export default function Header() {
 	return (
 		<header
 			ref={pathname === "/" ? null : headerRef}
-			className="max-w-[1200px] fixed z-40 flex flex-col items-center justify-center w-full mx-auto bg-background overflow-hidden"
+			className="fixed z-40 flex flex-col items-center justify-center w-full mx-auto overflow-hidden bg-background"
 		>
 			<nav className="flex items-center justify-between py-5 w-full px-[1.25rem] z-50">
 				<menu className="md:flex items-center justify-center space-x-6 text-[13px] uppercase hidden z-[999999]">
@@ -315,7 +315,7 @@ export default function Header() {
 				<div className="absolute right-0 px-10 bottom-10 sm:bottom-3">
 					<div className="flex items-center gap-4 text-sm font-normal md:text-xl justify-items-end">
 						<Link
-							href={"https://twitter.com/hexelstudio "}
+							href={"https://twitter.com/hexelstudio"}
 							target="_blank"
 							className="uppercase socials"
 						>
@@ -347,7 +347,7 @@ export default function Header() {
 				ref={searchRef}
 				className=" abslute justify-center w-full hidden opacity-0 translate-y-[-300%]"
 			>
-				<Search />
+				<Search setOpenSearch={setOpenSearch} />
 			</div>
 		</header>
 	);

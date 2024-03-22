@@ -5,7 +5,7 @@ import SearchIcon from "./search-icon";
 import { useRouter } from "next/navigation";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
-export default function Search({ openSearch }) {
+export default function Search({ setOpenSearch }) {
 	const [query, setQuery] = useState("");
 	const [isSearching, startTransition] = useTransition();
 	const router = useRouter();
@@ -43,7 +43,7 @@ export default function Search({ openSearch }) {
 				/>
 
 				<button
-					className=" bg-[#C7C7C7] px-4 py-2 absolute right-2 rounded-br-md rounded-tr-md flex items-center justify-center disabled:cursor-not-allowed"
+					className="duration-100 transition-colors ease-linear bg-[#C7C7C7] px-4 py-2 absolute right-2 rounded-br-md rounded-tr-md flex items-center justify-center disabled:bg-[#737373] disabled:cursor-not-allowed"
 					onClick={search}
 					disabled={query === ""}
 				>

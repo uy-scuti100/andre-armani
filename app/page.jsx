@@ -23,11 +23,11 @@ export default function page() {
 
 	return (
 		<section>
-			<div className="absolute inset-0 z-40 flex items-center justify-center bg-background ">
+			<div className="absolute inset-0 z-40 flex items-center justify-center w-screen h-screen overflow-hidden bg-background home-home">
 				<PreloaderSvg />
 			</div>
 			<div
-				className="absolute inset-0 z-50 bg-background overlay"
+				className="absolute inset-0 z-50 w-full h-full overflow-hidden bg-background overlay"
 				style={{ clipPath: "circle(0.0% at 50% 50%)" }}
 			></div>
 		</section>
