@@ -71,9 +71,6 @@ export default function CartProducts() {
 			) : (
 				<div>
 					<p>Your cart is empty</p>
-					{/* <div className="flex items-center justify-center">
-						
-					</div> */}
 				</div>
 			)}
 		</menu>

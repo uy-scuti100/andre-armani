@@ -8,20 +8,20 @@ import Link from "next/link";
 
 export default function Footer() {
 	const days = [
+		"Sunday",
 		"Monday",
 		"Tuesday",
 		"Wednesday",
 		"Thursday",
 		"Friday",
 		"Saturday",
-		"Sunday",
 	];
 	const day = new Date().getUTCDay();
 	const year = new Date().getFullYear();
 
 	const today = days[day];
 	return (
-		<footer className="border-t-2 border-foreground rounded-t-[50px] z-40 w-full py-32 mx-auto mt-32 bg-foreground/10">
+		<footer className="border-t border-foreground rounded-t-[50px] z-40 w-full py-32 mx-auto mt-32 bg-foreground/10">
 			<div className="flex flex-col justify-between gap-20 px-5 md:flex-row">
 				<div className="flex flex-col">
 					<h3 className="mb-3 text-2xl font-semibold">ANDRÉ ARMANI</h3>
@@ -46,7 +46,7 @@ export default function Footer() {
 						<Link
 							href={"https://twitter.com/hexelstudio"}
 							target="_blank"
-							className="flex items-center gap-2 px-4 py-2 ring ring-inset rounded-2xl ring-foreground"
+							className="flex items-center gap-2 px-4 py-2 transition-transform duration-500 ease-linear hover:scale-105 ring ring-inset rounded-2xl ring-foreground"
 						>
 							{" "}
 							<TwitterLogoIcon /> <span>Twitter</span>
@@ -56,7 +56,7 @@ export default function Footer() {
 								"https://www.tiktok.com/@osirisdigitalagency?_t=8kmUDm1QO0c&_r=1"
 							}
 							target="_blank"
-							className="flex items-center gap-2 px-4 py-2 ring ring-inset rounded-2xl ring-foreground"
+							className="flex items-center gap-2 px-4 py-2 transition-transform duration-500 ease-linear hover:scale-105 ring ring-inset rounded-2xl ring-foreground"
 						>
 							<GitHubLogoIcon />
 							<span>Tiktok</span>
@@ -66,7 +66,7 @@ export default function Footer() {
 								"https://www.instagram.com/hexeldigitalstudio?igsh=OWx3YjhpbjE4NXg5&utm_source=qr"
 							}
 							target="_blank"
-							className="flex items-center gap-2 px-4 py-2 ring ring-inset rounded-2xl ring-foreground"
+							className="flex items-center gap-2 px-4 py-2 transition-transform duration-500 ease-linear hover:scale-105 ring ring-inset rounded-2xl ring-foreground"
 						>
 							<InstagramLogoIcon /> <span>Instagram</span>
 						</Link>
@@ -98,14 +98,14 @@ export default function Footer() {
 
 			<div className="px-5 mt-32">
 				<div className="flex items-center justify-between">
-					<div>
+					<p className="text-xs sm:text-base">
 						Have a nice <span className="font-semibold">{today}</span>
-					</div>
+					</p>
 					<div className="bg-foreground/50 w-full h-[1px]" />
 
-					<div>
+					<p className="text-xs sm:text-base">
 						Stay <span className="font-semibold">Artistic.</span>
-					</div>
+					</p>
 				</div>
 			</div>
 

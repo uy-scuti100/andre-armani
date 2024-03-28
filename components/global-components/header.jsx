@@ -6,7 +6,7 @@ import SearchIcon from "./search-icon";
 import Shoppingcart from "./shopping-cart";
 import { useStore } from "../../store/cart";
 import { useRef, useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import navbarImage from "../../assets/navbar-img.webp";
 import CartProducts from "./cart-products";
@@ -36,6 +36,7 @@ export default function Header() {
 	const tl = useRef();
 	const tl2 = useRef();
 	const pathname = usePathname();
+	const router = useRouter();
 	useGSAP(() => {
 		tl.current = gsap.timeline({ paused: true });
 		tl2.current = gsap.timeline({ paused: true });
@@ -204,18 +205,23 @@ export default function Header() {
 													</p>
 												</div>
 												<div className="flex justify-center w-full space-x-4">
-													<AddToCartButton
-														onClick={() => {}}
-														className="px-4 py-4 hover:scale-1"
-													>
-														View Cart
-													</AddToCartButton>
-													<BuyItNowButton
-														onClick={() => {}}
-														className="px-4 py-4 hover:scale-1"
-													>
-														Checkout
-													</BuyItNowButton>
+													<SheetTrigger asChild>
+														<AddToCartButton
+															onClick={() => router.push("/cart")}
+															className="px-4 py-4 hover:scale-1"
+														>
+															View Cart
+														</AddToCartButton>
+													</SheetTrigger>
+
+													<SheetTrigger asChild>
+														<BuyItNowButton
+															onClick={() => router.push("/checkout")}
+															className="px-4 py-4 hover:scale-1"
+														>
+															Checkout
+														</BuyItNowButton>
+													</SheetTrigger>
 												</div>
 												<div>
 													<BuyItNowButton
@@ -270,7 +276,7 @@ export default function Header() {
 					<div>
 						<Logosvg className={"logo-svg"} />
 					</div>
-					<div className="mt-4 w-full h-[150px] px-4 ">
+					<div className="mt-4 w-full h-[150px] px-4 py-5">
 						<Image
 							src={navbarImage}
 							alt="navbar-image"
@@ -312,7 +318,7 @@ export default function Header() {
 					</Link>
 				</menu>
 
-				<div className="absolute right-0 px-10 bottom-10 sm:bottom-3">
+				<div className="absolute bottom-0 right-0 px-10 sm:bottom-3">
 					<div className="flex items-center gap-4 text-sm font-normal md:text-xl justify-items-end">
 						<Link
 							href={"https://twitter.com/hexelstudio"}

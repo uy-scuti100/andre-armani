@@ -25,7 +25,11 @@ export default function Fetchings({ query }) {
 
 	if (isError) {
 		console.log(error);
-		return <div>An error occured while fetching these products</div>;
+		return (
+			<div className="mt-20 text-2xl font-medium text-center uppercase">
+				Unable to fetch Products
+			</div>
+		);
 	}
 
 	if (productData && productData.length == 0) {

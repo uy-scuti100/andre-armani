@@ -31,7 +31,11 @@ export default function ProductInfo({ slug, children }) {
 
 	const data = productData?.[0];
 	if (isError) {
-		return <div>error</div>;
+		return (
+			<div className="mt-20 text-2xl font-medium text-center uppercase">
+				Unable to fetch Product
+			</div>
+		);
 	}
 	if (isFetching || isLoading) {
 		return <SkeletonProductInfo />;
@@ -79,7 +83,7 @@ export default function ProductInfo({ slug, children }) {
 					_id: data.slug.current,
 					name: data.name,
 					image: data.images[0],
-					price: data.price,
+					price: calculatePrice(),
 					type: data.type,
 
 					selectedSize,
@@ -180,7 +184,7 @@ export default function ProductInfo({ slug, children }) {
 							</span>
 						)}
 					</p>
-					<div className="flex flex-wrap items-center gap-6 pb-8 text-sm font-light ">
+					<div className="flex flex-wrap items-center gap-6 pb-8 text-sm font-light">
 						{data.sizes.map((size, i) => (
 							<div key={i} className="rounded-none">
 								{data.type === "printed_hoodies" ? (
