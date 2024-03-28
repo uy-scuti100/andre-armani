@@ -318,7 +318,7 @@ export default function Header() {
 					</Link>
 				</menu>
 
-				<div className="absolute bottom-0 right-0 px-10 sm:bottom-3">
+				<div className="absolute right-0 px-10 bottom-5 sm:bottom-3">
 					<div className="flex items-center gap-4 text-sm font-normal md:text-xl justify-items-end">
 						<Link
 							href={"https://twitter.com/hexelstudio"}
