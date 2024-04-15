@@ -17,7 +17,7 @@ export default function Productcard({ name, slug, price, images, i, base64 }) {
 					blurDataURL={base64}
 				/>
 
-				{images.length > 1 && (
+				{/* {images.length > 1 && (
 					<div className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
 						{" "}
 						<Image
@@ -29,7 +29,7 @@ export default function Productcard({ name, slug, price, images, i, base64 }) {
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						/>
 					</div>
-				)}
+				)} */}
 			</div>
 			<div className="flex flex-col gap-2">
 				<div className="font-medium truncate text-ellipsis overflow-hidden ...">

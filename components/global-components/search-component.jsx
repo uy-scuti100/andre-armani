@@ -38,7 +38,7 @@ export default function Search({ setOpenSearch }) {
 					onChange={(e) => setQuery(e.target.value)}
 					value={query}
 					ref={inputRef}
-					className="overflow-hidden text-xs outline-none"
+					className="overflow-hidden text-base outline-none"
 					placeholder="Search..."
 				/>
 
