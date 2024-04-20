@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	GitHubLogoIcon,
 	InstagramLogoIcon,
@@ -5,6 +7,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Separator } from "../ui/separator";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
 	const days = [
@@ -20,6 +23,11 @@ export default function Footer() {
 	const year = new Date().getFullYear();
 
 	const today = days[day];
+
+	const pathname = usePathname();
+	if (pathname.startsWith("/admin/")) {
+		return null;
+	}
 	return (
 		<footer className="border-t border-foreground rounded-t-[50px] z-40 w-full py-32 mx-auto mt-32 bg-foreground/10">
 			<div className="flex flex-col justify-between gap-20 px-5 md:flex-row">
@@ -97,13 +105,13 @@ export default function Footer() {
 			<Separator className=" bg-foreground/50" />
 
 			<div className="px-5 mt-32">
-				<div className="flex items-center justify-between">
-					<p className="text-xs sm:text-base">
+				<div className="flex items-center justify-between gap-2">
+					<p className="text-sm sm:text-base">
 						Have a nice <span className="font-semibold">{today}</span>
 					</p>
-					<div className="bg-foreground/50 w-full h-[1px]" />
+					<div className="bg-foreground/50 w-[60%] h-[1px]" />
 
-					<p className="text-xs sm:text-base">
+					<p className="text-sm sm:text-base">
 						Stay <span className="font-semibold">Artistic.</span>
 					</p>
 				</div>

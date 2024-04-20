@@ -461,7 +461,6 @@
 			"type": "image/png"
 		}
 	],
-
 	"theme_color": "#F1EFE7",
 	"background_color": "#F1EFE7",
 	"display": "standalone",

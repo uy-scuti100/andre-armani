@@ -131,7 +131,9 @@ export default function Header() {
 		});
 		setTotalProductsCount(totalCount);
 	}, [cart]);
-
+	if (pathname.startsWith("/admin/")) {
+		return null;
+	}
 	return (
 		<header
 			ref={pathname === "/" ? null : headerRef}
