@@ -7,17 +7,13 @@ import SmoothScroll from "../providers/smooth-scroll";
 import ReactQueryProvider from "../components/global-components/query-provider";
 import { Toaster } from "../components/ui/toaster";
 
-// export const metadata = {
-// 	title: "ANDRE ARMANI",
-// 	description:
-// 		"website to cop all and latest artistic products of ANDRE ARMANI",
-// };
 const icons = [
 	{ rel: "icon", url: "/favicon-32x32.png" },
 	{ rel: "icon", url: "/favicon-16x16.png" },
 	{ rel: "apple-touch-icon", url: "/apple-touch-icon.png" },
-	{ rel: "manifest", url: "/site.webmanifest" },
 ];
+
+const manifest = "/manifest.json";
 export const metadata = {
 	title: "Andre Armani",
 	description:
@@ -46,6 +42,7 @@ export const metadata = {
 	},
 	robots: "index, follow",
 	icons: icons,
+	manifest: manifest,
 };
 
 export default function RootLayout({ children }) {
