@@ -23,8 +23,13 @@ export default function Herosection() {
 	return (
 		<Swiper
 			slidesPerView={1}
-			freeMode={true}
-			autoplay={{ delay: 2000 }}
+			// freeMode={true}
+			autoplay={{
+				delay: 2000,
+				pauseOnMouseEnter: true,
+				// reverseDirection: true,
+				disableOnInteraction: true,
+			}}
 			pagination={{ clickable: true }}
 			navigation={true}
 			loop

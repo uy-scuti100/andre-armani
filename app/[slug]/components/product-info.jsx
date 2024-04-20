@@ -140,7 +140,7 @@ export default function ProductInfo({ slug, children }) {
 				</div>
 				<div className="md:my-0 lg:order-1 lg:basis-[10%]">
 					<div className="flex items-center justify-center gap-5 lg:flex-col">
-						{data.images.map((image, i) => {
+						{data?.images.map((image, i) => {
 							return (
 								<button onClick={() => setSlider(i)} key={i}>
 									<ImageSwitchcomponent

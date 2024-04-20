@@ -24,7 +24,6 @@ export default function Fetchings({ query }) {
 	}
 
 	if (isError) {
-		console.log(error);
 		return (
 			<div className="mt-20 text-2xl font-medium text-center uppercase">
 				Unable to fetch Products

@@ -29,7 +29,7 @@ export default function page() {
 			<div
 				className="absolute inset-0 z-50 w-full h-full overflow-hidden bg-background overlay"
 				style={{ clipPath: "circle(0.0% at 50% 50%)" }}
-			></div>
+			/>
 		</section>
 	);
 }

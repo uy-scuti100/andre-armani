@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
+import nextPWA from "next-pwa";
+
+const withPWAConfig = nextPWA({
+	// Create a named config object
+	dest: "public",
+});
+
 const nextConfig = {
 	images: {
 		remotePatterns: [
@@ -16,4 +23,4 @@ const nextConfig = {
 	},
 };
 
-export default nextConfig;
+export default withPWAConfig(nextConfig); // Apply withPWAConfig and export
