@@ -25,7 +25,13 @@ export default function Footer() {
 	const today = days[day];
 
 	const pathname = usePathname();
-	if (pathname.startsWith("/admin/")) {
+	if (
+		pathname.startsWith("/admin") ||
+		pathname.startsWith("/verify-email") ||
+		pathname.startsWith("/forgot-password") ||
+		pathname.startsWith("/reset-password") ||
+		pathname.startsWith("/login")
+	) {
 		return null;
 	}
 	return (

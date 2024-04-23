@@ -76,8 +76,7 @@
 		--input: 0 0% 89.8%;
 		--ring: 0 0% 3.9%;
 		--radius: 0.5rem;
-
-		--btn-clr: #ffffff;
+		--message-color: 224, 76%, 48%;
 	}
 
 	.dark {
@@ -101,6 +100,7 @@
 		--border: 0 0% 14.9%;
 		--input: 0 0% 14.9%;
 		--ring: 0 0% 83.1%;
+		--message-color: 43, 96%, 56%;
 	}
 }
 

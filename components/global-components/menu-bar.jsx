@@ -1,8 +1,6 @@
 "use client";
 
-import { CaretDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { Separator } from "../ui/separator";
 
 export default function Menubar() {
 	return (

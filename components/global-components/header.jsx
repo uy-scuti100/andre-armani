@@ -23,8 +23,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import AddToCartButton from "../../app/[slug]/components/addtocart-button-component";
-import BuyItNowButton from "../../app/[slug]/components/buyitnow-button-component";
+import AddToCartButton from "../../app/(e-com)/_components/addtocart-button-component";
+import BuyItNowButton from "../../app/(e-com)/_components/buyitnow-button-component";
+import UserNav from "../../components/global-components/user-nav";
 
 export default function Header() {
 	const [totalProductsCount, setTotalProductsCount] = useState(0);
@@ -131,7 +132,13 @@ export default function Header() {
 		});
 		setTotalProductsCount(totalCount);
 	}, [cart]);
-	if (pathname.startsWith("/admin/")) {
+	if (
+		pathname.startsWith("/admin") ||
+		pathname.startsWith("/verify-email") ||
+		pathname.startsWith("/forgot-password") ||
+		pathname.startsWith("/reset-password") ||
+		pathname.startsWith("/login")
+	) {
 		return null;
 	}
 	return (
@@ -153,6 +160,7 @@ export default function Header() {
 					André Armani
 				</Link>
 				<div className="text-[13px] uppercase flex items-center gap-5">
+					<UserNav />
 					<button onClick={toggleSearchOpen}>
 						<SearchIcon />
 					</button>
