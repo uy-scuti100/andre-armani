@@ -1,28 +1,20 @@
 export default function MenuIcon({ onClick }) {
 	return (
-		<button>
+		<button onClick={onClick}>
 			<svg
-				onClick={onClick}
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="20"
-				viewBox="0 0 24 24"
+				aria-hidden="true"
 				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				class="lucide lucide-grip"
+				focusable="false"
+				width="24"
+				class="header__nav-icon icon icon-hamburger"
+				viewBox="0 0 24 24"
 			>
-				<circle cx="12" cy="5" r="1" />
-				<circle cx="19" cy="5" r="1" />
-				<circle cx="5" cy="5" r="1" />
-				<circle cx="12" cy="12" r="1" />
-				<circle cx="19" cy="12" r="1" />
-				<circle cx="5" cy="12" r="1" />
-				<circle cx="12" cy="19" r="1" />
-				<circle cx="19" cy="19" r="1" />
-				<circle cx="5" cy="19" r="1" />
+				<path
+					d="M1 19h22M1 12h22M1 5h22"
+					stroke="currentColor"
+					stroke-width="1.8"
+					stroke-linecap="square"
+				></path>
 			</svg>
 		</button>
 	);

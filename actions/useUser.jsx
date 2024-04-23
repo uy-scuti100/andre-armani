@@ -1,13 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import createClient from "../utils/supabase/client";
 
-const initialUser = {
-	created_at: "",
-	display_name: "",
-	email: "",
-	id: "",
-	image_url: "",
-};
 export default function useUser() {
 	const supabase = createClient();
 	return useQuery({
@@ -24,7 +17,7 @@ export default function useUser() {
 					.single();
 				return user;
 			}
-			return initialUser;
+			return null;
 		},
 	});
 }

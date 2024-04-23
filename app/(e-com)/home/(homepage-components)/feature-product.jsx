@@ -5,7 +5,7 @@ export default function Featureproduct() {
 		<section className="flex flex-col items-center justify-center w-full h-screen mt-32 md:flex-row">
 			<div className="flex-1 w-full h-full md:order-2">
 				<Image
-					src={"/wears/coming-soon.webp"}
+					src={"/wears/world-shakes.jpeg"}
 					width={400}
 					height={400}
 					alt="coming-soon"

@@ -4,13 +4,14 @@ import {
 	fetchAllArtwork,
 	fetchSingleArtwork,
 } from "../../../actions/fetchings";
-import ProductInfo from "../_components/product-info";
-import RelatedProductsInfo from "../_components/related-products-info";
+
+import RelatedProductsInfo from "./_components/related-products-info";
 import {
 	dehydrate,
 	HydrationBoundary,
 	QueryClient,
 } from "@tanstack/react-query";
+import ProductInfo from "./_components/product-info";
 
 export default async function page({ params }) {
 	const { slug } = params;

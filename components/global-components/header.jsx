@@ -23,8 +23,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import AddToCartButton from "../../app/(e-com)/_components/addtocart-button-component";
-import BuyItNowButton from "../../app/(e-com)/_components/buyitnow-button-component";
+import AddToCartButton from "../../app/(e-com)/[slug]/_components/addtocart-button-component";
+import BuyItNowButton from "../../app/(e-com)/[slug]/_components/buyitnow-button-component";
 import UserNav from "../../components/global-components/user-nav";
 
 export default function Header() {
@@ -35,12 +35,12 @@ export default function Header() {
 	const navRef = useRef();
 	const searchRef = useRef();
 	const tl = useRef();
-	const tl2 = useRef();
+	// const tl2 = useRef();
 	const pathname = usePathname();
 	const router = useRouter();
 	useGSAP(() => {
 		tl.current = gsap.timeline({ paused: true });
-		tl2.current = gsap.timeline({ paused: true });
+		// tl2.current = gsap.timeline({ paused: true });
 
 		tl.current
 			.to(navRef.current, {
@@ -96,13 +96,13 @@ export default function Header() {
 				"-=1.3"
 			);
 
-		tl2.current.to(searchRef.current, {
-			duration: 0.5,
-			display: "flex",
-			opacity: 1,
-			y: 0,
-			ease: "expo.easeOut",
-		});
+		// tl2.current.to(searchRef.current, {
+		// 	duration: 0.5,
+		// 	display: "flex",
+		// 	opacity: 1,
+		// 	y: 0,
+		// 	ease: "expo.easeOut",
+		// });
 	}, []);
 
 	const toggleNavOpen = () => {
@@ -113,14 +113,14 @@ export default function Header() {
 			tl.current?.play();
 		}
 	};
-	const toggleSearchOpen = () => {
-		setOpenSearch((prev) => !prev);
-		if (openSearch) {
-			tl2.current?.reverse();
-		} else {
-			tl2.current?.play();
-		}
-	};
+	// const toggleSearchOpen = () => {
+	// 	setOpenSearch((prev) => !prev);
+	// 	if (openSearch) {
+	// 		tl2.current?.reverse();
+	// 	} else {
+	// 		tl2.current?.play();
+	// 	}
+	// };
 
 	const cart = useStore((state) => state.cart);
 	const remove = useStore((state) => state.removeAll);
@@ -161,10 +161,10 @@ export default function Header() {
 				</Link>
 				<div className="text-[13px] uppercase flex items-center gap-5">
 					<UserNav />
-					<button onClick={toggleSearchOpen}>
+					{/* <button onClick={toggleSearchOpen}>
 						<SearchIcon />
-					</button>
-					<div className="flex items-center space-x-[2px]">
+					</button> */}
+					<div className="flex items-center">
 						<Sheet>
 							<SheetTrigger asChild>
 								<button>
@@ -359,11 +359,8 @@ export default function Header() {
 				</div>
 			</div>
 
-			<div
-				ref={searchRef}
-				className=" abslute justify-center w-full hidden opacity-0 translate-y-[-300%]"
-			>
-				<Search setOpenSearch={setOpenSearch} />
+			<div className="justify-center w-full abslute">
+				<Search />
 			</div>
 		</header>
 	);

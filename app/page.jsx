@@ -14,6 +14,15 @@ export default function page() {
 			clipPath: "circle(50% at 50% 50%)",
 		});
 	}, []);
+	useEffect(() => {
+		// Disable scrollbar when component mounts
+		document.body.style.overflow = "hidden";
+
+		// Re-enable scrollbar when component unmounts
+		return () => {
+			document.body.style.overflow = "auto";
+		};
+	}, []);
 
 	useEffect(() => {
 		setTimeout(() => {

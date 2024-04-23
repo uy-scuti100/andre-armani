@@ -4,7 +4,7 @@ const redirect = (path) => {
 	window.location.href = path;
 };
 
-export const signup = async (email, password, username) => {
+export const signup = async (email, password) => {
 	const supabase = createClient();
 
 	try {
@@ -12,20 +12,13 @@ export const signup = async (email, password, username) => {
 			email,
 			password,
 			options: {
-				emailRedirectTo: `${window.location.origin}/auth/confirm?next=/private`,
+				emailRedirectTo: `${window.location.origin}/auth/confirm?next=/home`,
 			},
-		});
-
-		await supabase.from("profiles").insert({
-			username: username,
-			email: email,
 		});
 
 		redirect("/verify-email?email=" + email);
 	} catch (error) {
-		// Handle sign-up errors appropriately
 		console.error("Signup error:", error);
-		// Inform the user about the error
 	}
 };
 
@@ -41,7 +34,7 @@ export const login = async (email, password) => {
 		if (error) {
 			return redirect("/login?message=Could not authenticate user");
 		}
-		return redirect("/private");
+		return redirect("/home");
 	} catch (error) {
 		// Handle sign-in errors appropriately
 		console.error("Signin error:", error);
@@ -64,3 +57,25 @@ export const handleSocialLogin = async (provider) => {
 		console.error("Social login error:", error);
 	}
 };
+
+// const { data, error } = await supabase
+// 	.from("auth.users")
+// 	.select("*")
+// 	.eq("email", email);
+
+// if (error) {
+// 	return redirect("/signup?message=Could not create user");
+// }
+// const user = data[0];
+// const { error: error2 } = await supabase
+// 	.from("profiles")
+// 	.select("*")
+// 	.eq("id", user.id)
+// 	.insert([
+// 		{
+// 			display_name: username,
+// 		},
+// 	]);
+// if (error2) {
+// 	return redirect("/error?message=Could not create profile");
+// }

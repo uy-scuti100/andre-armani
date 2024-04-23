@@ -3,9 +3,10 @@ import Link from "next/link";
 import { Button } from "../../../components/ui/button";
 import { useStore } from "../../../store/cart";
 import Image from "next/image";
-import BuyItNowButton from "../_components/buyitnow-button-component";
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import BuyItNowButton from "../[slug]/_components/buyitnow-button-component";
 
 export default function page() {
 	const [totalProductsCount, setTotalProductsCount] = useState(0);

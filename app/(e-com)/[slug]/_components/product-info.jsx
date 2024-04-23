@@ -4,16 +4,17 @@ import Imagecomponent from "./image-component";
 import ImageSwitchcomponent from "./image-switch-component";
 import LinkComponent from "./link-component";
 import { useState } from "react";
-import MailIcon from "../../../components/global-components/mail-icon";
-import ShareIcon from "../../../components/global-components/share-icon";
+
+import ShareIcon from "../../../../components/global-components/share-icon";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
+import MailIcon from "../../../../components/global-components/mail-icon";
 import SkeletonProductInfo from "./product-skeleton";
 import RelatedProductsInfo from "./related-products-info";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useStore } from "../../../store/cart";
-import { toast } from "../../../components/ui/use-toast";
-import AddToCartButton from "./addtocart-button-component";
+import { useStore } from "../../../../store/cart";
+import { toast } from "../../../../components/ui/use-toast";
+import AddToCartButton from "../_components/addtocart-button-component";
 import BuyItNowButton from "./buyitnow-button-component";
 
 export default function ProductInfo({ slug, children }) {

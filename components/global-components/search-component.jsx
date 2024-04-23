@@ -5,7 +5,7 @@ import SearchIcon from "./search-icon";
 import { useRouter } from "next/navigation";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
-export default function Search({ setOpenSearch }) {
+export default function Search() {
 	const [query, setQuery] = useState("");
 	const [isSearching, startTransition] = useTransition();
 	const router = useRouter();

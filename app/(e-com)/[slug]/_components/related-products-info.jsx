@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import Productcard from "../../../components/global-components/product-card";
-import { shuffleArray } from "../../../lib/utils";
+import Productcard from "../../../../components/global-components/product-card";
+import { shuffleArray } from "../../../../lib/utils";
 import { useQuery } from "@tanstack/react-query";
-import { fetchRelatedProducts } from "../../../actions/fetchings";
+import { fetchRelatedProducts } from "../../../../actions/fetchings";
 import RelatedProductsSkeleton from "./related-products-skeleton";
 
 export default function RelatedProductsInfo({ type, slug }) {
