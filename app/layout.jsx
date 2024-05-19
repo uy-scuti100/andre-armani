@@ -50,12 +50,12 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={` ${GeistMono.variable} antialiased`}>
 			<body>
 				<ReactQueryProvider>
-					<SmoothScroll>
-						<Header />
-						{children}
-						<Toaster />
-						<Footer />
-					</SmoothScroll>
+					{/* <SmoothScroll> */}
+					<Header />
+					{children}
+					<Toaster />
+					<Footer />
+					{/* </SmoothScroll> */}
 				</ReactQueryProvider>
 			</body>
 		</html>

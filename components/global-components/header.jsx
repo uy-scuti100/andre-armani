@@ -95,14 +95,6 @@ export default function Header() {
 				},
 				"-=1.3"
 			);
-
-		// tl2.current.to(searchRef.current, {
-		// 	duration: 0.5,
-		// 	display: "flex",
-		// 	opacity: 1,
-		// 	y: 0,
-		// 	ease: "expo.easeOut",
-		// });
 	}, []);
 
 	const toggleNavOpen = () => {
@@ -113,14 +105,6 @@ export default function Header() {
 			tl.current?.play();
 		}
 	};
-	// const toggleSearchOpen = () => {
-	// 	setOpenSearch((prev) => !prev);
-	// 	if (openSearch) {
-	// 		tl2.current?.reverse();
-	// 	} else {
-	// 		tl2.current?.play();
-	// 	}
-	// };
 
 	const cart = useStore((state) => state.cart);
 	const remove = useStore((state) => state.removeAll);
