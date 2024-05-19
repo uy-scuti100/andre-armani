@@ -18,7 +18,7 @@ export default async function Showcase() {
 		(prod) => prod.type === "printed-paper"
 	);
 	const printedWearsProducts = shuffledProducts.filter(
-		(prod) => prod.type === "printed-wears"
+		(prod) => prod.type === "printed_hoodies"
 	);
 
 	return (
@@ -89,6 +89,11 @@ export default async function Showcase() {
 							})}
 						</div>
 					</div>
+				</div>
+				<div className="flex items-center justify-center mt-20">
+					<Button className="bg-[rgb(83,83,83)] hover:bg-[rgb(83,83,83)]  font-light w-auto rounded-none px-10 py-6 text-base text-white uppercase mb-8 shadow-none hover:scale-105 transition-transform duration-300 ease-in-out ">
+						<Link href={"/collection/wears"}>See More</Link>
+					</Button>
 				</div>
 			</div>
 		</section>
